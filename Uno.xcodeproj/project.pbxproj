@@ -1,0 +1,594 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F07053432A79C30700F8577A /* UnoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07053422A79C30700F8577A /* UnoApp.swift */; };
+		F07053452A79C30700F8577A /* UnoDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07053442A79C30700F8577A /* UnoDocument.swift */; };
+		F07053472A79C30700F8577A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07053462A79C30700F8577A /* ContentView.swift */; };
+		F07053492A79C30800F8577A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F07053482A79C30800F8577A /* Assets.xcassets */; };
+		F070534C2A79C30800F8577A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F070534B2A79C30800F8577A /* Preview Assets.xcassets */; };
+		F07053582A79C30800F8577A /* UnoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07053572A79C30800F8577A /* UnoTests.swift */; };
+		F07053622A79C30800F8577A /* UnoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07053612A79C30800F8577A /* UnoUITests.swift */; };
+		F07053642A79C30800F8577A /* UnoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07053632A79C30800F8577A /* UnoUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F07053542A79C30800F8577A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F07053372A79C30700F8577A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F070533E2A79C30700F8577A;
+			remoteInfo = Uno;
+		};
+		F070535E2A79C30800F8577A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F07053372A79C30700F8577A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F070533E2A79C30700F8577A;
+			remoteInfo = Uno;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F070533F2A79C30700F8577A /* Uno.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Uno.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F07053422A79C30700F8577A /* UnoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnoApp.swift; sourceTree = "<group>"; };
+		F07053442A79C30700F8577A /* UnoDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnoDocument.swift; sourceTree = "<group>"; };
+		F07053462A79C30700F8577A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F07053482A79C30800F8577A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F070534B2A79C30800F8577A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F070534D2A79C30800F8577A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F070534E2A79C30800F8577A /* Uno.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Uno.entitlements; sourceTree = "<group>"; };
+		F07053532A79C30800F8577A /* UnoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F07053572A79C30800F8577A /* UnoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnoTests.swift; sourceTree = "<group>"; };
+		F070535D2A79C30800F8577A /* UnoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F07053612A79C30800F8577A /* UnoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnoUITests.swift; sourceTree = "<group>"; };
+		F07053632A79C30800F8577A /* UnoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnoUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F070533C2A79C30700F8577A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F07053502A79C30800F8577A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F070535A2A79C30800F8577A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F07053362A79C30700F8577A = {
+			isa = PBXGroup;
+			children = (
+				F07053412A79C30700F8577A /* Uno */,
+				F07053562A79C30800F8577A /* UnoTests */,
+				F07053602A79C30800F8577A /* UnoUITests */,
+				F07053402A79C30700F8577A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F07053402A79C30700F8577A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F070533F2A79C30700F8577A /* Uno.app */,
+				F07053532A79C30800F8577A /* UnoTests.xctest */,
+				F070535D2A79C30800F8577A /* UnoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F07053412A79C30700F8577A /* Uno */ = {
+			isa = PBXGroup;
+			children = (
+				F07053422A79C30700F8577A /* UnoApp.swift */,
+				F07053442A79C30700F8577A /* UnoDocument.swift */,
+				F07053462A79C30700F8577A /* ContentView.swift */,
+				F07053482A79C30800F8577A /* Assets.xcassets */,
+				F070534D2A79C30800F8577A /* Info.plist */,
+				F070534E2A79C30800F8577A /* Uno.entitlements */,
+				F070534A2A79C30800F8577A /* Preview Content */,
+			);
+			path = Uno;
+			sourceTree = "<group>";
+		};
+		F070534A2A79C30800F8577A /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				F070534B2A79C30800F8577A /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F07053562A79C30800F8577A /* UnoTests */ = {
+			isa = PBXGroup;
+			children = (
+				F07053572A79C30800F8577A /* UnoTests.swift */,
+			);
+			path = UnoTests;
+			sourceTree = "<group>";
+		};
+		F07053602A79C30800F8577A /* UnoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F07053612A79C30800F8577A /* UnoUITests.swift */,
+				F07053632A79C30800F8577A /* UnoUITestsLaunchTests.swift */,
+			);
+			path = UnoUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F070533E2A79C30700F8577A /* Uno */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F07053672A79C30800F8577A /* Build configuration list for PBXNativeTarget "Uno" */;
+			buildPhases = (
+				F070533B2A79C30700F8577A /* Sources */,
+				F070533C2A79C30700F8577A /* Frameworks */,
+				F070533D2A79C30700F8577A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Uno;
+			productName = Uno;
+			productReference = F070533F2A79C30700F8577A /* Uno.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F07053522A79C30800F8577A /* UnoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F070536A2A79C30800F8577A /* Build configuration list for PBXNativeTarget "UnoTests" */;
+			buildPhases = (
+				F070534F2A79C30800F8577A /* Sources */,
+				F07053502A79C30800F8577A /* Frameworks */,
+				F07053512A79C30800F8577A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F07053552A79C30800F8577A /* PBXTargetDependency */,
+			);
+			name = UnoTests;
+			productName = UnoTests;
+			productReference = F07053532A79C30800F8577A /* UnoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F070535C2A79C30800F8577A /* UnoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F070536D2A79C30800F8577A /* Build configuration list for PBXNativeTarget "UnoUITests" */;
+			buildPhases = (
+				F07053592A79C30800F8577A /* Sources */,
+				F070535A2A79C30800F8577A /* Frameworks */,
+				F070535B2A79C30800F8577A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F070535F2A79C30800F8577A /* PBXTargetDependency */,
+			);
+			name = UnoUITests;
+			productName = UnoUITests;
+			productReference = F070535D2A79C30800F8577A /* UnoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F07053372A79C30700F8577A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					F070533E2A79C30700F8577A = {
+						CreatedOnToolsVersion = 15.0;
+					};
+					F07053522A79C30800F8577A = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = F070533E2A79C30700F8577A;
+					};
+					F070535C2A79C30800F8577A = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = F070533E2A79C30700F8577A;
+					};
+				};
+			};
+			buildConfigurationList = F070533A2A79C30700F8577A /* Build configuration list for PBXProject "Uno" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F07053362A79C30700F8577A;
+			productRefGroup = F07053402A79C30700F8577A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F070533E2A79C30700F8577A /* Uno */,
+				F07053522A79C30800F8577A /* UnoTests */,
+				F070535C2A79C30800F8577A /* UnoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F070533D2A79C30700F8577A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F070534C2A79C30800F8577A /* Preview Assets.xcassets in Resources */,
+				F07053492A79C30800F8577A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F07053512A79C30800F8577A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F070535B2A79C30800F8577A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F070533B2A79C30700F8577A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F07053432A79C30700F8577A /* UnoApp.swift in Sources */,
+				F07053452A79C30700F8577A /* UnoDocument.swift in Sources */,
+				F07053472A79C30700F8577A /* ContentView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F070534F2A79C30800F8577A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F07053582A79C30800F8577A /* UnoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F07053592A79C30800F8577A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F07053622A79C30800F8577A /* UnoUITests.swift in Sources */,
+				F07053642A79C30800F8577A /* UnoUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F07053552A79C30800F8577A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F070533E2A79C30700F8577A /* Uno */;
+			targetProxy = F07053542A79C30800F8577A /* PBXContainerItemProxy */;
+		};
+		F070535F2A79C30800F8577A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F070533E2A79C30700F8577A /* Uno */;
+			targetProxy = F070535E2A79C30800F8577A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		F07053652A79C30800F8577A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F07053662A79C30800F8577A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		F07053682A79C30800F8577A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Uno/Uno.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Uno/Preview Content\"";
+				DEVELOPMENT_TEAM = LZ3UTU8883;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Uno/Info.plist;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = art.xrvision.Uno;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		F07053692A79C30800F8577A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Uno/Uno.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Uno/Preview Content\"";
+				DEVELOPMENT_TEAM = LZ3UTU8883;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Uno/Info.plist;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = art.xrvision.Uno;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		F070536B2A79C30800F8577A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LZ3UTU8883;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = art.xrvision.UnoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Uno.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Uno";
+			};
+			name = Debug;
+		};
+		F070536C2A79C30800F8577A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LZ3UTU8883;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = art.xrvision.UnoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Uno.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Uno";
+			};
+			name = Release;
+		};
+		F070536E2A79C30800F8577A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LZ3UTU8883;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = art.xrvision.UnoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = Uno;
+			};
+			name = Debug;
+		};
+		F070536F2A79C30800F8577A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LZ3UTU8883;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = art.xrvision.UnoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = Uno;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F070533A2A79C30700F8577A /* Build configuration list for PBXProject "Uno" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F07053652A79C30800F8577A /* Debug */,
+				F07053662A79C30800F8577A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F07053672A79C30800F8577A /* Build configuration list for PBXNativeTarget "Uno" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F07053682A79C30800F8577A /* Debug */,
+				F07053692A79C30800F8577A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F070536A2A79C30800F8577A /* Build configuration list for PBXNativeTarget "UnoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F070536B2A79C30800F8577A /* Debug */,
+				F070536C2A79C30800F8577A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F070536D2A79C30800F8577A /* Build configuration list for PBXNativeTarget "UnoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F070536E2A79C30800F8577A /* Debug */,
+				F070536F2A79C30800F8577A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F07053372A79C30700F8577A /* Project object */;
+}
