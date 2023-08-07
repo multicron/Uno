@@ -25,7 +25,7 @@ class Hand : Deck {
         
         if haveColorMatch {
             log("We have a color match and can't play Wild +4")
-            unsorted = unsorted.filter { card in card.type != .wildPlus4}
+            unsorted = unsorted.filter { card in card.type != .wildDraw4}
         }
             
         return Hand.sortCards(unsorted)
@@ -43,21 +43,21 @@ class Hand : Deck {
                 }
             }
             return false
-        case (.number, .plus2): return true
+        case (.number, .draw2): return true
         case (.number, .reverse) : return true
         case (.number, .skip) : return true
         case (.number, .wild) : return true
-        case (.number, .wildPlus4) : return true
+        case (.number, .wildDraw4) : return true
         case (.skip, .reverse): return true
-        case (.skip, .plus2): return true
+        case (.skip, .draw2): return true
         case (.skip, .wild): return true
-        case (.skip, .wildPlus4): return true
-        case (.reverse, .plus2): return true
+        case (.skip, .wildDraw4): return true
+        case (.reverse, .draw2): return true
         case (.reverse, .wild): return true
-        case (.reverse, .wildPlus4): return true
-        case (.plus2, .wild): return true
-        case (.plus2, .wildPlus4): return true
-        case (.wild, .wildPlus4): return true
+        case (.reverse, .wildDraw4): return true
+        case (.draw2, .wild): return true
+        case (.draw2, .wildDraw4): return true
+        case (.wild, .wildDraw4): return true
         default: return false
         }
     }

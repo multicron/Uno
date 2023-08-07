@@ -18,9 +18,9 @@ enum Color: String {
 
 enum CardType : String {
     case wild = "Wild"
-    case wildPlus4 = "Wild +4"
+    case wildDraw4 = "Wild +4"
     case number = "Number"
-    case plus2 = "+2"
+    case draw2 = "+2"
     case skip = "Skip"
     case reverse = "Reverse"
 }
@@ -41,14 +41,14 @@ struct Card : Equatable, CustomStringConvertible {
     var score: Int {
         switch self.type {
         case .number: return self.number!
-        case .plus2, .reverse, .skip: return 20
-        case .wild, .wildPlus4: return 50
+        case .draw2, .reverse, .skip: return 20
+        case .wild, .wildDraw4: return 50
         }
     }
 
     var description: String {
         if self.type == .number { return "\(color!.rawValue) \(number!)"}
-        if self.type == .wild || self.type == .wildPlus4 {
+        if self.type == .wild || self.type == .wildDraw4 {
             if let color = self.color {return "\(color.rawValue) \(type.rawValue)"}
             else {return "\(type.rawValue)"}
         }
@@ -71,13 +71,13 @@ struct Card : Equatable, CustomStringConvertible {
     
     func playable(on cardInPlay: Card) -> Bool {
         if self.type == .wild { return true }
-        if self.type == .wildPlus4 { return true }
+        if self.type == .wildDraw4 { return true }
         
         if self.type == .number && (self.color == cardInPlay.color) { return true}
         if self.type == .number && cardInPlay.type == .number && (self.number == cardInPlay.number) { return true}
         
         if self.color == cardInPlay.color {return true}
-        if (self.type == .plus2 || self.type == .skip || self.type == .reverse) && self.type == cardInPlay.type {return true}
+        if (self.type == .draw2 || self.type == .skip || self.type == .reverse) && self.type == cardInPlay.type {return true}
         
         return false
      }

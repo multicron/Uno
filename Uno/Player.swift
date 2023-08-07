@@ -50,7 +50,7 @@ struct Player : CustomStringConvertible, Hashable {
         
         let _ = hand.removeCard(card)
         
-        if cardToPlay.type == .wild || cardToPlay.type == .wildPlus4 {
+        if cardToPlay.type == .wild || cardToPlay.type == .wildDraw4 {
             if let bestColor = self.hand.bestColor() {
                 cardToPlay.color = bestColor;
             }

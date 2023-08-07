@@ -28,12 +28,12 @@ class Deck : CustomStringConvertible {
         
         for _ in 1...4 {
             addCard(Card(.wild))
-            addCard(Card(.wildPlus4))
+            addCard(Card(.wildDraw4))
         }
         
         Card.allColors.forEach { color in
             for _ in 1...2 {
-                addCard(Card(.plus2,color));
+                addCard(Card(.draw2,color));
                 addCard(Card(.reverse,color));
                 addCard(Card(.skip,color));
             }
@@ -76,7 +76,7 @@ class Deck : CustomStringConvertible {
         cards = cards.map { card in
             switch card.type {
             case .wild: return Card(card.type)
-            case .wildPlus4: return Card(card.type)
+            case .wildDraw4: return Card(card.type)
             default: return card
             }
         }

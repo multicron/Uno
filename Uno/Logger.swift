@@ -9,6 +9,7 @@ import Foundation
 
 enum Logger : String {
     case Round
+    case Game
     case Simulator
     case TurnHistory
     case Strategy
@@ -25,19 +26,26 @@ enum Logger : String {
         let baseName = URL(fileURLWithPath: tag, isDirectory: false)
             .deletingPathExtension()
             .lastPathComponent
-        self = Logger(rawValue: baseName) ?? .Unknown
+        if let valid = Logger(rawValue: baseName) {
+            self = valid
+        }
+        else {
+            print("Logger: Unknown tag \(tag)")
+            self = .Unknown
+        }
     }
     
     func shouldLog() -> Bool {
+        return true
         switch self {
-        case .Simulator:
+        case .Simulator,.RoundCounts,.Game:
             return true
         case .Card,.CardCounts,.Deck,.Round,.RoundHistory,.Hand,.Player,.Strategy,.TurnHistory:
             return false
         case .Unknown:
             return true
         default:
-            return false
+            return true
         }
     }
     
