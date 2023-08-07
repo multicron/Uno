@@ -12,16 +12,16 @@ private let log = Logger(tag:#file).log
 @main
 
 class Simulator {
-    static var gameCounter = GameCounts()
+    static var roundCounter = RoundCounts()
 
     static func main() {
         for x in (1...1000) {
-            var game = Game();
-            game.play(turns:1000);
-            log("Game \(x) won by \(game.winner!).")
-            gameCounter.countGame(game: game)
+            var round = Round();
+            round.play(turns:1000);
+            log("Round \(x) won by \(round.winner!).")
+            roundCounter.countRound(round: round)
         }
         
-        log(gameCounter)
+        log(roundCounter)
     }
 }

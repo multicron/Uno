@@ -1,5 +1,5 @@
 //
-//  GameHistory.swift
+//  RoundHistory.swift
 //  Uno
 //
 //  Created by Eric Olson on 8/3/23.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct GameHistory : CustomStringConvertible {
+struct RoundHistory : CustomStringConvertible {
     var plays: [(player: Player, hand: String, turn: TurnHistory)] = []
     
     var description: String {

@@ -9,11 +9,11 @@ import SwiftUI
 
 private let log = Logger(tag:#file).log
 
-struct Game : CustomStringConvertible {    
+struct Round : CustomStringConvertible {    
     var drawDeck = Deck()
     var discardDeck = Deck()
     var cardCounter = CardCounts()
-    var history = GameHistory()
+    var history = RoundHistory()
     var players : [Player] = []
     var currentPlayer : Int = 0;
     var skipNextPlayer : Bool = false;
@@ -27,14 +27,14 @@ struct Game : CustomStringConvertible {
     
       init() {
         
-        log("Game.init()");
+        log("Round.init()");
 
         drawDeck.addStandardDeck()
         drawDeck.shuffle()
         drawDeck.addDiscardDeck(deck: discardDeck)
         
         for name in ["Bluby","Henry","Rachel","Max"] {
-            let _ = addPlayer(player: Player(game: self, name: name)).drawCards(deck:drawDeck,count:7)
+            let _ = addPlayer(player: Player(round: self, name: name)).drawCards(deck:drawDeck,count:7)
          }
 
         while (drawDeck.topCard().type == .wildPlus4) {
@@ -56,7 +56,7 @@ struct Game : CustomStringConvertible {
         players.first( where: {$0.hasWon()})
     }
     
-    var gameOver : Bool {
+    var roundOver : Bool {
         return winner != nil
     }
     
@@ -66,7 +66,7 @@ struct Game : CustomStringConvertible {
             skipNextPlayer = true
         case .reverse:
             turnDirection *= -1
-            // In a two-player game, Reverse == Skip
+            // In a two-player round, Reverse == Skip
             if players.count==2 { skipNextPlayer = true }
         case .plus2:
             penaltyDrawsNextPlayer = 2
@@ -110,7 +110,7 @@ struct Game : CustomStringConvertible {
             
             advanceToNextPlayer()
             
-            if self.gameOver {
+            if self.roundOver {
                 log("\n" + history.description)
                 return
             }

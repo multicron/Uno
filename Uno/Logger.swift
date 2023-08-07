@@ -8,13 +8,13 @@
 import Foundation
 
 enum Logger : String {
-    case Game
+    case Round
     case Simulator
     case TurnHistory
     case Strategy
     case CardCounts
-    case GameCounts
-    case GameHistory
+    case RoundCounts
+    case RoundHistory
     case Deck
     case Hand
     case Card
@@ -32,7 +32,7 @@ enum Logger : String {
         switch self {
         case .Simulator:
             return true
-        case .Card,.CardCounts,.Deck,.Game,.GameHistory,.Hand,.Player,.Simulator,.Strategy,.TurnHistory:
+        case .Card,.CardCounts,.Deck,.Round,.RoundHistory,.Hand,.Player,.Strategy,.TurnHistory:
             return false
         case .Unknown:
             return true
