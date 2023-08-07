@@ -37,7 +37,15 @@ struct Card : Equatable, CustomStringConvertible {
     var type: CardType;
     var number: Int?
     var color: Color?
-        
+    
+    var score: Int {
+        switch self.type {
+        case .number: return self.number!
+        case .plus2, .reverse, .skip: return 20
+        case .wild, .wildPlus4: return 50
+        }
+    }
+
     var description: String {
         if self.type == .number { return "\(color!.rawValue) \(number!)"}
         if self.type == .wild || self.type == .wildPlus4 {

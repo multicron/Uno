@@ -14,9 +14,9 @@ class Hand : Deck {
         return Hand.sortCards(cards).description
     }
 
-    var isEmpty: Bool {
-        return self.cards.isEmpty;
-    }
+    var isEmpty: Bool {self.cards.isEmpty}
+    
+    var score: Int { self.cards.reduce(0) {scoreAcc, card in scoreAcc + card.score} }
     
     func playableCards(on cardToPlayOn: Card) -> [Card] {
         var unsorted = self.cards.filter{ card in card.playable(on: cardToPlayOn)}
@@ -66,7 +66,7 @@ class Hand : Deck {
         return cards.sorted(by: Self.compareCards)
     }
 
-    func removeCard(_ cardToRemove: Card) -> Bool {
+     func removeCard(_ cardToRemove: Card) -> Bool {
         if let index = self.cards.firstIndex(of: cardToRemove) {
             self.cards.remove(at: index)
             return true
