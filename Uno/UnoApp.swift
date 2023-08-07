@@ -7,7 +7,8 @@
 
 import SwiftUI
 
-@main
+private let log = Logger(tag:#file).log
+
 struct UnoApp: App {
     var body: some Scene {
         DocumentGroup(newDocument: UnoDocument()) { file in
