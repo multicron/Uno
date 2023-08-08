@@ -16,7 +16,7 @@ struct Round : CustomStringConvertible {
     var drawDeck = Deck()
     var discardDeck = Deck()
     var cardCounter = CardCounts()
-    var history = RoundHistory()
+    var history = RoundHistoryItem()
     var currentPlayer : Int = 0;
     var skipNextPlayer : Bool = false;
     var penaltyDrawsNextPlayer : Int = 0;

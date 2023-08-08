@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct RoundHistory : CustomStringConvertible {
-    var plays: [(player: Player, hand: String, turn: TurnHistory)] = []
+struct RoundHistoryItem : CustomStringConvertible {
+    var plays: [(player: Player, hand: String, turn: TurnHistoryItem)] = []
     
     var description: String {
         return plays.enumerated()
@@ -17,7 +17,7 @@ struct RoundHistory : CustomStringConvertible {
             .joined(separator: "\n")
     }
     
-    mutating func recordTurn(player: Player, turn: TurnHistory) {
+    mutating func recordTurn(player: Player, turn: TurnHistoryItem) {
         plays.append((player,player.hand.description,turn))
     }
     

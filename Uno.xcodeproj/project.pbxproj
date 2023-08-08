@@ -21,11 +21,11 @@
 		F08652B42A7ABBCA007A1405 /* Hand.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08652B32A7ABBCA007A1405 /* Hand.swift */; };
 		F08652B62A7AC15B007A1405 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08652B52A7AC15B007A1405 /* Logger.swift */; };
 		F08652B82A7AEBAF007A1405 /* CardCounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08652B72A7AEBAF007A1405 /* CardCounts.swift */; };
-		F08652BA2A7C93C7007A1405 /* RoundHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08652B92A7C93C7007A1405 /* RoundHistory.swift */; };
+		F08652BA2A7C93C7007A1405 /* RoundHistoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08652B92A7C93C7007A1405 /* RoundHistoryItem.swift */; };
 		F08652BC2A7C96EB007A1405 /* Round.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08652BB2A7C96EB007A1405 /* Round.swift */; };
 		F08652BE2A7C9755007A1405 /* Strategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08652BD2A7C9755007A1405 /* Strategy.swift */; };
-		F08652C02A7C9C63007A1405 /* TurnHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08652BF2A7C9C63007A1405 /* TurnHistory.swift */; };
-		F09746992A814030002BD744 /* Simulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09746982A814030002BD744 /* Simulator.swift */; };
+		F08652C02A7C9C63007A1405 /* TurnHistoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08652BF2A7C9C63007A1405 /* TurnHistoryItem.swift */; };
+		F09746992A814030002BD744 /* Simulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09746982A814030002BD744 /* Simulation.swift */; };
 		F097469B2A814BE4002BD744 /* RoundCounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F097469A2A814BE4002BD744 /* RoundCounts.swift */; };
 		F097469D2A81841D002BD744 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = F097469C2A81841D002BD744 /* Game.swift */; };
 		F097469F2A81CFEE002BD744 /* CardEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = F097469E2A81CFEE002BD744 /* CardEnum.swift */; };
@@ -68,11 +68,11 @@
 		F08652B32A7ABBCA007A1405 /* Hand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hand.swift; sourceTree = "<group>"; };
 		F08652B52A7AC15B007A1405 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		F08652B72A7AEBAF007A1405 /* CardCounts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCounts.swift; sourceTree = "<group>"; };
-		F08652B92A7C93C7007A1405 /* RoundHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundHistory.swift; sourceTree = "<group>"; };
+		F08652B92A7C93C7007A1405 /* RoundHistoryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundHistoryItem.swift; sourceTree = "<group>"; };
 		F08652BB2A7C96EB007A1405 /* Round.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Round.swift; sourceTree = "<group>"; };
 		F08652BD2A7C9755007A1405 /* Strategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strategy.swift; sourceTree = "<group>"; };
-		F08652BF2A7C9C63007A1405 /* TurnHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnHistory.swift; sourceTree = "<group>"; };
-		F09746982A814030002BD744 /* Simulator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Simulator.swift; sourceTree = "<group>"; };
+		F08652BF2A7C9C63007A1405 /* TurnHistoryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnHistoryItem.swift; sourceTree = "<group>"; };
+		F09746982A814030002BD744 /* Simulation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Simulation.swift; sourceTree = "<group>"; };
 		F097469A2A814BE4002BD744 /* RoundCounts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundCounts.swift; sourceTree = "<group>"; };
 		F097469C2A81841D002BD744 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		F097469E2A81CFEE002BD744 /* CardEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardEnum.swift; sourceTree = "<group>"; };
@@ -129,12 +129,12 @@
 				F07053422A79C30700F8577A /* UnoApp.swift */,
 				F08652BB2A7C96EB007A1405 /* Round.swift */,
 				F097469C2A81841D002BD744 /* Game.swift */,
-				F09746982A814030002BD744 /* Simulator.swift */,
-				F08652BF2A7C9C63007A1405 /* TurnHistory.swift */,
+				F09746982A814030002BD744 /* Simulation.swift */,
+				F08652BF2A7C9C63007A1405 /* TurnHistoryItem.swift */,
 				F08652BD2A7C9755007A1405 /* Strategy.swift */,
 				F08652B72A7AEBAF007A1405 /* CardCounts.swift */,
 				F097469A2A814BE4002BD744 /* RoundCounts.swift */,
-				F08652B92A7C93C7007A1405 /* RoundHistory.swift */,
+				F08652B92A7C93C7007A1405 /* RoundHistoryItem.swift */,
 				F08652B52A7AC15B007A1405 /* Logger.swift */,
 				F08652B12A7ABB9D007A1405 /* Deck.swift */,
 				F08652B32A7ABBCA007A1405 /* Hand.swift */,
@@ -311,13 +311,13 @@
 				F08652B82A7AEBAF007A1405 /* CardCounts.swift in Sources */,
 				F08652AE2A7ABB27007A1405 /* Player.swift in Sources */,
 				F07053432A79C30700F8577A /* UnoApp.swift in Sources */,
-				F08652BA2A7C93C7007A1405 /* RoundHistory.swift in Sources */,
+				F08652BA2A7C93C7007A1405 /* RoundHistoryItem.swift in Sources */,
 				F08652B02A7ABB74007A1405 /* Card.swift in Sources */,
 				F08652BC2A7C96EB007A1405 /* Round.swift in Sources */,
 				F08652B42A7ABBCA007A1405 /* Hand.swift in Sources */,
 				F08652BE2A7C9755007A1405 /* Strategy.swift in Sources */,
-				F08652C02A7C9C63007A1405 /* TurnHistory.swift in Sources */,
-				F09746992A814030002BD744 /* Simulator.swift in Sources */,
+				F08652C02A7C9C63007A1405 /* TurnHistoryItem.swift in Sources */,
+				F09746992A814030002BD744 /* Simulation.swift in Sources */,
 				F07053452A79C30700F8577A /* UnoDocument.swift in Sources */,
 				F097469B2A814BE4002BD744 /* RoundCounts.swift in Sources */,
 				F07053472A79C30700F8577A /* ContentView.swift in Sources */,

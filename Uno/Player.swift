@@ -45,14 +45,9 @@ struct Player : CustomStringConvertible, Hashable {
         return drawn
     }
     
-    func playCard(card: Card) {
-        var cardToPlay = card
+    func playOneTurn(turnIsSkipped: Bool, penaltiesToDraw: Int) -> TurnHistoryItem {
         
-     }
-    
-    func playOneTurn(turnIsSkipped: Bool, penaltiesToDraw: Int) -> TurnHistory {
-        
-        var turn = TurnHistory()
+        var turn = TurnHistoryItem()
         
         log("\(self.name): ")
         
@@ -77,30 +72,34 @@ struct Player : CustomStringConvertible, Hashable {
             
             if !playableCards.isEmpty {
                 var cardToPlay = playableCards[0]
-                let _ = hand.removeCard(cardToPlay)
-                
-                let bestColor = self.hand.bestColor()
-                cardToPlay.setColor(color: bestColor ?? Color.red)
-                
-                log("Playing ","\"",cardToPlay.description,"\"")
-                
-                game.currentRound!.discardDeck.addCard(cardToPlay)
-
+                playCard(card: &cardToPlay)
                 turn.cardPlayed = cardToPlay
             }
             else {
-                let drawnCard = game.currentRound!.drawDeck.drawCard()
+                var drawnCard = game.currentRound!.drawDeck.drawCard()
                 log("Drawing a card: ", drawnCard.description)
                 hand.addCard(drawnCard)
                 turn.cardsDrawn.append(drawnCard)
+                // TODO: Check if Wild+4 can be played
                 if (drawnCard.playable(on: topCardOfDiscardDeck)) {
                     log("Playing the drawn card")
-                    playCard(card: drawnCard)
+                    playCard(card: &drawnCard)
                     turn.cardPlayed = drawnCard
                 }
             }
         }
         return turn
+    }
+    
+    func playCard(card: inout Card) {
+        let _ = hand.removeCard(card)
+        
+        let bestColor = self.hand.bestColor()
+        card.setColorIfWildcard(color: bestColor ?? Color.red)
+        
+        log("Playing ","\"",card.description,"\"")
+        
+        game.currentRound!.discardDeck.addCard(card)
     }
 }
 

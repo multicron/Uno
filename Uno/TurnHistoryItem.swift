@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct TurnHistory : CustomStringConvertible {
+struct TurnHistoryItem : CustomStringConvertible {
     var cardPlayed : Card?
     var skipped: Bool = false
     var cardsDrawn : [Card] = []

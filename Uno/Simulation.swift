@@ -11,7 +11,7 @@ private let log = Logger(tag:#file).log
 
 @main
 
-class Simulator {
+class Simulation {
 
     static func main() {
         for x in (1...10) {

@@ -80,13 +80,14 @@ enum Card : Equatable, CustomStringConvertible {
         }
     }
     
-    mutating func setColor(color:Color) {
+    mutating func setColorIfWildcard(color:Color) {
         switch self {
         case .wild: self = .wild(color:color)
         case .wildDraw4: self = .wildDraw4(color: color)
         default: break
         }
     }
+    
     func playable(on cardInPlay: Card) -> Bool {
         switch (self, cardInPlay) {
         case (.wild,_):
