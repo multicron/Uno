@@ -16,6 +16,7 @@ enum Logger : String {
     case CardCounts
     case RoundCounts
     case RoundHistory
+    case RoundTurns
     case Deck
     case Hand
     case Card
@@ -40,15 +41,24 @@ enum Logger : String {
     }
     
     func shouldLog() -> Bool {
-        return true
+//        return true
         switch self {
-        case .Simulator,.RoundHistory:
+        case .Simulator,
+                .Round:
             return true
-        case .Card,.CardCounts,.Deck,.Round,.RoundHistory,.Hand,.Player,.Strategy,.TurnHistory:
+        case .Card,
+                .CardCounts,
+                .Deck,
+                .Game,
+                .RoundHistory,
+                .RoundCounts,
+                .RoundTurns,
+                .Hand,
+                .Player,
+                .Strategy,
+                .TurnHistory:
             return false
         case .Unknown:
-            return true
-        default:
             return true
         }
     }
@@ -56,7 +66,7 @@ enum Logger : String {
     func log(_ anything : Any...) {
         if (!shouldLog()) {return}
         print(self.rawValue,terminator:": ")
-//        print(Date().description,self.file,terminator:": ")
+        //        print(Date().description,self.file,terminator:": ")
         anything.forEach { item in
             print(item,terminator: "")
         }

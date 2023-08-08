@@ -86,7 +86,7 @@ class Deck : CustomStringConvertible {
         if (cards.isEmpty) {
             self.reshuffle()
         }
-        return self.cards.removeFirst()
+        return self.cards.removeLast()
     }
     
     func shuffle() {
