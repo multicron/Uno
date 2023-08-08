@@ -81,7 +81,7 @@ struct Player : CustomStringConvertible, Hashable {
                 log("Drawing a card: ", drawnCard.description)
                 hand.addCard(drawnCard)
                 turn.cardsDrawn.append(drawnCard)
-                // TODO: Check if Wild+4 can be played
+                // TODO: Check if drawn Wild+4 can be played
                 if (drawnCard.playable(on: topCardOfDiscardDeck)) {
                     log("Playing the drawn card")
                     playCard(card: &drawnCard)

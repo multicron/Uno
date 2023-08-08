@@ -11,8 +11,6 @@ private let log = Logger(tag:#file).log
 private let log_history = Logger(tag:"RoundHistory").log
 
 struct Round : CustomStringConvertible {
-    let game: Game
-    
     var players : [Player] = []
     var drawDeck = Deck()
     var discardDeck = Deck()
@@ -27,16 +25,14 @@ struct Round : CustomStringConvertible {
         return "drawDeck: \(drawDeck.description)"
     }
     
-    init(game: Game) {
+    init() {
         
-        self.game = game
-
         drawDeck.addStandardDeck()
         drawDeck.shuffle()
         drawDeck.addDiscardDeck(deck: discardDeck)
         
 
-        while (drawDeck.topCard().type == .wildDraw4(color:nil).type) {
+        while (drawDeck.topCard() == .wildDraw4(color:nil)) {
             log("Top card is a Wild +4, reshuffling Draw Deck")
             drawDeck.shuffle()
             }
@@ -63,7 +59,7 @@ struct Round : CustomStringConvertible {
 
     
     mutating func handleActionCard(_ card: Card) {
-        switch card.type {
+        switch card {
         case .skip:
             skipNextPlayer = true
         case .reverse:

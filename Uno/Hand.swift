@@ -36,7 +36,7 @@ class Hand : Deck {
     }
     
     static func compareCards(card0: Card, card1: Card) -> Bool {
-        switch (card0.type,card1.type) {
+        switch (card0,card1) {
         case (.number, .number):
             if let color0 = card0.color, let color1 = card1.color {
                 if (color0 != color1) {
@@ -47,8 +47,8 @@ class Hand : Deck {
                 }
             }
             return false
-        case (.number, _): return true
         case (.number, .reverse) : return true
+        case (.number, .draw2): return true
         case (.number, .skip) : return true
         case (.number, .wild) : return true
         case (.number, .wildDraw4) : return true

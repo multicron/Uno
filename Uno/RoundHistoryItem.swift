@@ -13,7 +13,7 @@ struct RoundHistoryItem : CustomStringConvertible {
     var description: String {
         return plays.enumerated()
             .map {(offset,play) in
-                "\(offset+1) \(play.player.name) \(play.turn) H:\(play.hand)"}
+                "\(offset+1) \(play.player.name) \(play.turn) H:\(play.hand.description)"}
             .joined(separator: "\n")
     }
     

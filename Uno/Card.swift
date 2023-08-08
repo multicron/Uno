@@ -16,15 +16,6 @@ enum Color: String {
     case yellow = "Yellow"
 }
 
-enum CardType : String {
-    case wild = "Wild"
-    case wildDraw4 = "Wild +4"
-    case number = "Number"
-    case draw2 = "+2"
-    case skip = "Skip"
-    case reverse = "Reverse"
-}
-
 enum Card : Equatable, CustomStringConvertible {
     case wildDraw4(color:Color?)
     case wild(color:Color?)
@@ -35,14 +26,13 @@ enum Card : Equatable, CustomStringConvertible {
     
     static let allColors : [Color] = [.red,.green,.blue,.yellow]
     static let allNumbers : [Int] = [0,1,2,3,4,5,6,7,8,9]
+    
     static var zeroedCardColorCounts: [Color:Int] {
         var counts: [Color:Int] = [:]
         allColors.forEach {color in counts[color] = 0}
         return counts
     }
-    
-    var type : Card {self}
-    
+        
     var number : Int? {
         switch self {
         case .number(_, let number): return number
@@ -95,7 +85,6 @@ enum Card : Equatable, CustomStringConvertible {
         case (.wildDraw4,_):
             return true
         case (.number(let color, let number),_):
-            log("color: \(color) cardInPlay.color \(cardInPlay.color)")
             return color==cardInPlay.color || number==cardInPlay.number
         case (.draw2(let color), _):
             return color==cardInPlay.color

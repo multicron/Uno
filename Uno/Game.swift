@@ -17,7 +17,7 @@ class Game {
         for x in 1...3 {
             log("--- Round #\(x) ---")
             
-            var thisRound = Round(game: self)
+            var thisRound = Round()
             
             for name in ["Bluby","Henry","Rachel","Max"] {
                 let player = Player(round: thisRound, name: name)

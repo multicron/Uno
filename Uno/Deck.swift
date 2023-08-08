@@ -74,7 +74,7 @@ class Deck : CustomStringConvertible {
     
     func reinitializeWildCards() {
         cards = cards.map { card in
-            switch card.type {
+            switch card {
             case .wild: return .wild(color:nil)
             case .wildDraw4: return .wildDraw4(color: nil)
             default: return card
