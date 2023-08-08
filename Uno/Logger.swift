@@ -23,16 +23,20 @@ enum Logger : String {
     case Unknown
     
     init(tag:String) {
-        let baseName = URL(fileURLWithPath: tag, isDirectory: false)
-            .deletingPathExtension()
-            .lastPathComponent
-        if let valid = Logger(rawValue: baseName) {
+        if let valid = Logger(rawValue: tag) {
             self = valid
         }
         else {
             print("Logger: Unknown tag \(tag)")
             self = .Unknown
         }
+    }
+    
+    init(file:String) {
+        let baseName = URL(fileURLWithPath: file, isDirectory: false)
+            .deletingPathExtension()
+            .lastPathComponent
+        self.init(tag: baseName)
     }
     
     func shouldLog() -> Bool {

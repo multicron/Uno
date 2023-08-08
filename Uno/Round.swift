@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-fileprivate let log = Logger(tag:#file).log
+fileprivate let log = Logger(file:#file).log
 fileprivate let log_history = Logger(tag:"RoundHistory").log
 
 struct Round : CustomStringConvertible {
