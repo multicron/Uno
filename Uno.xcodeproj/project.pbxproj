@@ -28,7 +28,6 @@
 		F09746992A814030002BD744 /* Simulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09746982A814030002BD744 /* Simulation.swift */; };
 		F097469B2A814BE4002BD744 /* RoundCounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F097469A2A814BE4002BD744 /* RoundCounts.swift */; };
 		F097469D2A81841D002BD744 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = F097469C2A81841D002BD744 /* Game.swift */; };
-		F097469F2A81CFEE002BD744 /* CardEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = F097469E2A81CFEE002BD744 /* CardEnum.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,7 +74,6 @@
 		F09746982A814030002BD744 /* Simulation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Simulation.swift; sourceTree = "<group>"; };
 		F097469A2A814BE4002BD744 /* RoundCounts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundCounts.swift; sourceTree = "<group>"; };
 		F097469C2A81841D002BD744 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
-		F097469E2A81CFEE002BD744 /* CardEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardEnum.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,7 +137,6 @@
 				F08652B12A7ABB9D007A1405 /* Deck.swift */,
 				F08652B32A7ABBCA007A1405 /* Hand.swift */,
 				F08652AF2A7ABB74007A1405 /* Card.swift */,
-				F097469E2A81CFEE002BD744 /* CardEnum.swift */,
 				F08652AD2A7ABB27007A1405 /* Player.swift */,
 				F07053442A79C30700F8577A /* UnoDocument.swift */,
 				F07053462A79C30700F8577A /* ContentView.swift */,
@@ -306,7 +303,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F097469F2A81CFEE002BD744 /* CardEnum.swift in Sources */,
 				F08652B22A7ABB9D007A1405 /* Deck.swift in Sources */,
 				F08652B82A7AEBAF007A1405 /* CardCounts.swift in Sources */,
 				F08652AE2A7ABB27007A1405 /* Player.swift in Sources */,

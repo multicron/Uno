@@ -7,7 +7,7 @@
 
 import Foundation
 
-private let log = Logger(tag:#file).log
+fileprivate let log = Logger(tag:#file).log
 
 enum Color: String {
     case red = "Red"

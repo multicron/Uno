@@ -7,14 +7,14 @@
 
 import Foundation
 
-private let log = Logger(tag:#file).log
+fileprivate let log = Logger(tag:#file).log
 
 @main
 
 class Simulation {
 
     static func main() {
-        for x in (1...10) {
+        for _ in (1...10) {
             let game = Game();
             game.play();
         }

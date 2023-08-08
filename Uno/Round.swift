@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-private let log = Logger(tag:#file).log
-private let log_history = Logger(tag:"RoundHistory").log
+fileprivate let log = Logger(tag:#file).log
+fileprivate let log_history = Logger(tag:"RoundHistory").log
 
 struct Round : CustomStringConvertible {
     var players : [Player] = []

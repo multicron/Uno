@@ -7,7 +7,7 @@
 
 import Foundation
 
-private let log = Logger(tag:#file).log
+fileprivate let log = Logger(tag:#file).log
 
 class Deck : CustomStringConvertible {
     var cards: [Card] = []

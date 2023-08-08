@@ -7,14 +7,14 @@
 
 import Foundation
 
-private let log = Logger(tag:#file).log
+fileprivate let log = Logger(tag:#file).log
 
 class Hand : Deck {
     override var description: String {
         return Hand.sortCards(cards).description
     }
 
-    var isEmpty: Bool {self.cards.isEmpty}
+    var isEmpty: Bool { self.cards.isEmpty }
     
     var score: Int { self.cards.reduce(0) {accum, card in accum + card.score} }
     
