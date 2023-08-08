@@ -36,9 +36,9 @@ enum Logger : String {
     }
     
     func shouldLog() -> Bool {
-        return true
+//        return true
         switch self {
-        case .Simulator,.RoundCounts,.Game:
+        case .Simulator,.RoundHistory:
             return true
         case .Card,.CardCounts,.Deck,.Round,.RoundHistory,.Hand,.Player,.Strategy,.TurnHistory:
             return false

@@ -10,7 +10,7 @@ import Foundation
 private let log = Logger(tag:#file).log
 
 struct Player : CustomStringConvertible, Hashable {
-    let round: Round
+    let game: Game
     let name: String
     private let score: Int = 0
     var hand: Hand = Hand()
@@ -18,8 +18,8 @@ struct Player : CustomStringConvertible, Hashable {
         return "Player Name: \(name) Score: \(score) Hand: \(hand.description)"
     }
     
-    init(round: Round, name: String) {
-        self.round = round
+    init(game: Game, name: String) {
+        self.game = game
         self.name = name
     }
     
@@ -59,7 +59,7 @@ struct Player : CustomStringConvertible, Hashable {
             }
         }
         
-        round.discardDeck.addCard(cardToPlay)
+        game.currentRound!.discardDeck.addCard(cardToPlay)
     }
     
     func playOneTurn(turnIsSkipped: Bool, penaltiesToDraw: Int) -> TurnHistory {
@@ -70,7 +70,7 @@ struct Player : CustomStringConvertible, Hashable {
         
         log(hand)
         
-        let topCardOfDiscardDeck = round.discardDeck.topCard()
+        let topCardOfDiscardDeck = game.currentRound!.discardDeck.topCard()
         log("Top Card: ","\"",topCardOfDiscardDeck.description,"\"")
         
         if (turnIsSkipped) {
@@ -78,7 +78,7 @@ struct Player : CustomStringConvertible, Hashable {
             turn.skipped = true
         }
         else if (penaltiesToDraw > 0) {
-            let drawn = self.drawCards(deck:round.drawDeck, count:penaltiesToDraw)
+            let drawn = self.drawCards(deck:game.currentRound!.drawDeck, count:penaltiesToDraw)
             log(" drew \(penaltiesToDraw) cards")
             
             turn.cardsDrawn = drawn
@@ -96,7 +96,7 @@ struct Player : CustomStringConvertible, Hashable {
                 turn.cardPlayed = cardToPlay
             }
             else {
-                let drawnCard = round.drawDeck.drawCard()
+                let drawnCard = game.currentRound!.drawDeck.drawCard()
                 log("Drawing a card: ", drawnCard.description)
                 hand.addCard(drawnCard)
                 turn.cardsDrawn.append(drawnCard)

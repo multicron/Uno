@@ -11,8 +11,9 @@ struct RoundHistory : CustomStringConvertible {
     var plays: [(player: Player, hand: String, turn: TurnHistory)] = []
     
     var description: String {
-        return plays
-            .map {play in "\(play.player.name) \(play.turn) \(play.hand)"}
+        return plays.enumerated()
+            .map {(offset,play) in
+                "\(offset+1) \(play.player.name) \(play.turn) H:\(play.hand)"}
             .joined(separator: "\n")
     }
     

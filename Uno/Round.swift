@@ -8,9 +8,11 @@
 import SwiftUI
 
 private let log = Logger(tag:#file).log
+private let log_history = Logger(tag:"RoundHistory").log
 
 struct Round : CustomStringConvertible {
     let game: Game
+    
     var drawDeck = Deck()
     var discardDeck = Deck()
     var cardCounter = CardCounts()
@@ -102,7 +104,7 @@ struct Round : CustomStringConvertible {
             advanceToNextPlayer()
             
             if self.roundOver {
-                log("\n" + history.description)
+                log_history("\n" + history.description)
                 return
             }
         }
