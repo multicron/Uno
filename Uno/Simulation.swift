@@ -11,13 +11,22 @@ fileprivate let log = Logger(file:#file).log
 
 @main
 
-class Simulation {
+struct Simulation {
+    var gameCounter : GameCounts = GameCounts()
 
     static func main() {
-        for x in (1...10) {
-            log("--- Simulation \(x) ---")
-            let game = Game();
-            game.play();
-        }
+        var sim = Simulation()
+        sim.run()
     }
+    
+    mutating func run() {
+        for x in (1...1000) {
+            log("--- Simulation \(x) ---")
+            var game = Game(winningScore: 500);
+            game.play()
+            gameCounter.countGame(game:game)
+        }
+        log(gameCounter)
+    }
+    
 }

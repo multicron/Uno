@@ -28,6 +28,7 @@
 		F09746992A814030002BD744 /* Simulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09746982A814030002BD744 /* Simulation.swift */; };
 		F097469B2A814BE4002BD744 /* RoundCounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F097469A2A814BE4002BD744 /* RoundCounts.swift */; };
 		F097469D2A81841D002BD744 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = F097469C2A81841D002BD744 /* Game.swift */; };
+		F09746A22A82D787002BD744 /* GameCounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09746A02A82D563002BD744 /* GameCounts.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,7 @@
 		F09746982A814030002BD744 /* Simulation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Simulation.swift; sourceTree = "<group>"; };
 		F097469A2A814BE4002BD744 /* RoundCounts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundCounts.swift; sourceTree = "<group>"; };
 		F097469C2A81841D002BD744 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		F09746A02A82D563002BD744 /* GameCounts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCounts.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +133,7 @@
 				F08652BF2A7C9C63007A1405 /* TurnHistoryItem.swift */,
 				F08652BD2A7C9755007A1405 /* Strategy.swift */,
 				F08652B72A7AEBAF007A1405 /* CardCounts.swift */,
+				F09746A02A82D563002BD744 /* GameCounts.swift */,
 				F097469A2A814BE4002BD744 /* RoundCounts.swift */,
 				F08652B92A7C93C7007A1405 /* RoundHistoryItem.swift */,
 				F08652B52A7AC15B007A1405 /* Logger.swift */,
@@ -309,6 +312,7 @@
 				F07053432A79C30700F8577A /* UnoApp.swift in Sources */,
 				F08652BA2A7C93C7007A1405 /* RoundHistoryItem.swift in Sources */,
 				F08652B02A7ABB74007A1405 /* Card.swift in Sources */,
+				F09746A22A82D787002BD744 /* GameCounts.swift in Sources */,
 				F08652BC2A7C96EB007A1405 /* Round.swift in Sources */,
 				F08652B42A7ABBCA007A1405 /* Hand.swift in Sources */,
 				F08652BE2A7C9755007A1405 /* Strategy.swift in Sources */,

@@ -9,31 +9,58 @@ import Foundation
 
 fileprivate let log = Logger(file:#file).log
 
-class Game {
+struct Game {
     var roundCounter = RoundCounts()
+    var players : [Player] = []
+    var winningScore : Int
+    var winner : Player? = nil
     
-    func play() {        
+    mutating func play() {
 
-        for x in 1...10 {
+        for name in ["Bluby","Henry","Rachel","Max"] {
+            let player = Player(name: name)
+            self.addPlayer(player)
+        }
+
+        for x in 1...1000 {
             log("--- Round #\(x) ---")
             
             var thisRound = Round()
             
-            for name in ["Bluby","Henry","Rachel","Max"] {
-                let player = Player(round: thisRound, name: name)
-                _ = thisRound.addPlayer(player)
+            defer {
+                log(roundCounter)
+            }
+            
+            for player in players {
+                let player = player
+                thisRound.addPlayer(player)
+                player.newHand()
                 _ = player.drawCards(count:7)
                 log("\(player.description)")
             }
                         
             thisRound.play(turns: 1000)
             
-            log("Round \(x) won by \(thisRound.winner) with a score of \(thisRound.score).")
+            guard let winner = thisRound.winner else {fatalError("Round ended with no winner")}
             
-            thisRound.winner?.addScore(thisRound.score)
+            log("Round \(x) won by \(winner.name) with a score of \(thisRound.score).")
+            
+            winner.addScore(thisRound.score)
             
             roundCounter.countRound(round: thisRound)
+            
+            if (winner.score >= winningScore) {
+                self.winner = winner
+                break
+            }
         }
-        log(roundCounter)
+        guard let winner = self.winner else {fatalError("Game ended with no winner")}
+        
+        log("Game is over; \(winner.name) won with a score of \(winner.score)")
+
+    }
+
+    mutating func addPlayer(_ player: Player) {
+        players.append(player)
     }
 }

@@ -10,11 +10,12 @@ import Foundation
 enum Logger : String {
     case Round
     case Game
-    case Simulator
+    case Simulation
     case TurnHistory
     case Strategy
     case CardCounts
     case RoundCounts
+    case GameCounts
     case RoundHistory
     case RoundTurns
     case Deck
@@ -22,6 +23,7 @@ enum Logger : String {
     case Card
     case Player
     case Unknown
+    case Unused
     
     init(tag:String) {
         if let valid = Logger(rawValue: tag) {
@@ -43,23 +45,26 @@ enum Logger : String {
     func shouldLog() -> Bool {
 //        return true
         switch self {
-        case .Simulator,
-                .Game,
-                .RoundCounts:
+        case .Unknown:
+            return true
+        case .Simulation,
+                .GameCounts,
+                .Unused:
             return true
         case .Card,
+                .Game,
                 .CardCounts,
                 .Round,
                 .Deck,
+                .RoundCounts,
                 .RoundTurns,
                 .RoundHistory,
                 .Hand,
                 .Player,
                 .Strategy,
-                .TurnHistory:
+                .TurnHistory,
+                .Unused:
             return false
-        case .Unknown:
-            return true
         }
     }
     

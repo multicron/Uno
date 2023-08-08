@@ -9,18 +9,21 @@ import Foundation
 
 fileprivate let log = Logger(file:#file).log
 
-struct Player : CustomStringConvertible, Hashable {
-    let round: Round
+class Player : CustomStringConvertible, Hashable {
+    private var round: Round? = nil
     let name: String
-    private let score: Int = 0
+    private(set) var score: Int = 0
     var hand: Hand = Hand()
     var description: String {
         return "Player Name: \(name) Score: \(score) Hand: \(hand.description)"
     }
     
-    init(round: Round, name: String) {
-        self.round = round
+    init(name: String) {
         self.name = name
+    }
+    
+    func setRound(_ round: Round) {
+        self.round = round
     }
     
     func hash(into hasher: inout Hasher) {
@@ -35,7 +38,17 @@ struct Player : CustomStringConvertible, Hashable {
         return self.hand.isEmpty
     }
     
+    func addScore(_ score: Int) {
+        self.score += score
+    }
+    
+    func newHand() {
+        self.hand = Hand()
+    }
+    
     func drawCards(count: Int = 1) -> [Card] {
+        guard let round = self.round else {fatalError("No round defined")}
+
         var drawn : [Card] = []
         for _ in 1...count {
             let card = round.drawDeck.drawCard()
@@ -46,6 +59,8 @@ struct Player : CustomStringConvertible, Hashable {
     }
     
     func playOneTurn(turnIsSkipped: Bool, penaltiesToDraw: Int) -> TurnHistoryItem {
+        
+        guard let round = self.round else {fatalError("No round defined")}
         
         var turn = TurnHistoryItem()
         
@@ -93,6 +108,8 @@ struct Player : CustomStringConvertible, Hashable {
     }
     
     func playCard(card: inout Card) {
+        guard let round = self.round else {fatalError("No round defined")}
+
         let _ = hand.removeCard(card)
         
         let bestColor = self.hand.bestColor()

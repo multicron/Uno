@@ -51,9 +51,9 @@ struct Round : CustomStringConvertible {
         return winner != nil
     }
     
-    mutating func addPlayer(_ player: Player) -> Player {
+    mutating func addPlayer(_ player: Player) {
         players.append(player)
-        return player
+        player.setRound(self)
     }
     
     var score: Int { self.players.reduce(0) {accum, player in accum + player.hand.score} }
