@@ -16,7 +16,7 @@ class Hand : Deck {
 
     var isEmpty: Bool {self.cards.isEmpty}
     
-    var score: Int { self.cards.reduce(0) {scoreAcc, card in scoreAcc + card.score} }
+    var score: Int { self.cards.reduce(0) {accum, card in accum + card.score} }
     
     func playableCards(on cardToPlayOn: Card) -> [Card] {
         var unsorted = self.cards.filter{ card in card.playable(on: cardToPlayOn)}
@@ -47,7 +47,7 @@ class Hand : Deck {
                 }
             }
             return false
-        case (.number, .draw2): return true
+        case (.number, _): return true
         case (.number, .reverse) : return true
         case (.number, .skip) : return true
         case (.number, .wild) : return true

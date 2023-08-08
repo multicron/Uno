@@ -10,7 +10,7 @@ import Foundation
 private let log = Logger(tag:#file).log
 
 struct Player : CustomStringConvertible, Hashable {
-    let game: Game
+    let round: Round
     let name: String
     private let score: Int = 0
     var hand: Hand = Hand()
@@ -18,8 +18,8 @@ struct Player : CustomStringConvertible, Hashable {
         return "Player Name: \(name) Score: \(score) Hand: \(hand.description)"
     }
     
-    init(game: Game, name: String) {
-        self.game = game
+    init(round: Round, name: String) {
+        self.round = round
         self.name = name
     }
     
@@ -35,10 +35,10 @@ struct Player : CustomStringConvertible, Hashable {
         return self.hand.isEmpty
     }
     
-    func drawCards(deck: Deck, count: Int = 1) -> [Card] {
+    func drawCards(count: Int = 1) -> [Card] {
         var drawn : [Card] = []
         for _ in 1...count {
-            let card = deck.drawCard()
+            let card = round.drawDeck.drawCard()
             drawn.append(card)
             hand.addCard(card)
         }
@@ -53,7 +53,8 @@ struct Player : CustomStringConvertible, Hashable {
         
         log(hand)
         
-        let topCardOfDiscardDeck = game.currentRound!.discardDeck.topCard()
+        let topCardOfDiscardDeck = round.discardDeck.topCard()
+        
         log("Top Card: ","\"",topCardOfDiscardDeck.description,"\"")
         
         if (turnIsSkipped) {
@@ -61,7 +62,7 @@ struct Player : CustomStringConvertible, Hashable {
             turn.skipped = true
         }
         else if (penaltiesToDraw > 0) {
-            let drawn = self.drawCards(deck:game.currentRound!.drawDeck, count:penaltiesToDraw)
+            let drawn = self.drawCards(count:penaltiesToDraw)
             log(" drew \(penaltiesToDraw) cards")
             
             turn.cardsDrawn = drawn
@@ -76,7 +77,7 @@ struct Player : CustomStringConvertible, Hashable {
                 turn.cardPlayed = cardToPlay
             }
             else {
-                var drawnCard = game.currentRound!.drawDeck.drawCard()
+                var drawnCard = round.drawDeck.drawCard()
                 log("Drawing a card: ", drawnCard.description)
                 hand.addCard(drawnCard)
                 turn.cardsDrawn.append(drawnCard)
@@ -99,7 +100,7 @@ struct Player : CustomStringConvertible, Hashable {
         
         log("Playing ","\"",card.description,"\"")
         
-        game.currentRound!.discardDeck.addCard(card)
+        round.discardDeck.addCard(card)
     }
 }
 

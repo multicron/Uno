@@ -13,6 +13,7 @@ private let log_history = Logger(tag:"RoundHistory").log
 struct Round : CustomStringConvertible {
     let game: Game
     
+    var players : [Player] = []
     var drawDeck = Deck()
     var discardDeck = Deck()
     var cardCounter = CardCounts()
@@ -44,14 +45,22 @@ struct Round : CustomStringConvertible {
 
         log(self)
     }
-    
-     var winner : Player? {
-         game.players.first( where: {$0.hasWon()})
+
+    var winner : Player? {
+         players.first( where: {$0.hasWon()})
     }
     
     var roundOver : Bool {
         return winner != nil
     }
+    
+    mutating func addPlayer(_ player: Player) -> Player {
+        players.append(player)
+        return player
+    }
+    
+    var score: Int { self.players.reduce(0) {accum, player in accum + player.hand.score} }
+
     
     mutating func handleActionCard(_ card: Card) {
         switch card.type {
@@ -60,7 +69,7 @@ struct Round : CustomStringConvertible {
         case .reverse:
             turnDirection *= -1
             // In a two-player round, Reverse == Skip
-            if game.players.count==2 { skipNextPlayer = true }
+            if players.count==2 { skipNextPlayer = true }
         case .draw2:
             penaltyDrawsNextPlayer = 2
         case .wildDraw4:
@@ -73,20 +82,20 @@ struct Round : CustomStringConvertible {
     
     mutating func advanceToNextPlayer() {
         currentPlayer += self.turnDirection
-        if (currentPlayer < 0) {currentPlayer = game.players.count - 1}
-        currentPlayer %= game.players.count
+        if (currentPlayer < 0) {currentPlayer = players.count - 1}
+        currentPlayer %= players.count
     }
     
     mutating func play(turns: Int) {
         for turnNumber in 1...turns {
             log("--- Turn # \(turnNumber) ---")
             
-            let player = game.players[currentPlayer]
+            let player = players[currentPlayer]
             
             let turn = player.playOneTurn(turnIsSkipped:skipNextPlayer,
                                           penaltiesToDraw: penaltyDrawsNextPlayer)
             
-            history.recordTurn(player: game.players[currentPlayer], turn: turn)
+            history.recordTurn(player: player, turn: turn)
 
             log(turn)
             

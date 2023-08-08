@@ -10,42 +10,28 @@ import Foundation
 private let log = Logger(tag:#file).log
 
 class Game {
-    var players : [Player] = []
     var roundCounter = RoundCounts()
-    var currentRound : Round?
     
-    func play() {
+    func play() {        
+
         for x in 1...3 {
             log("--- Round #\(x) ---")
-            currentRound = Round(game: self)
-            players = [];
+            
+            var thisRound = Round(game: self)
+            
             for name in ["Bluby","Henry","Rachel","Max"] {
-                let player = Player(game: self, name:name)
-                _ = player.drawCards(deck:currentRound!.drawDeck,count:7)
-                _ = addPlayer(player: player)
+                let player = Player(round: thisRound, name: name)
+                _ = thisRound.addPlayer(player)
+                _ = player.drawCards(count:7)
+                log("\(player.description)")
             }
-            players.forEach {log("\($0.description)")}
-            if var round = currentRound {
-                round.play(turns: 1000)
-            }
-            log("Round \(x) won by \(currentRound!.winner!).")
-            roundCounter.countRound(round: currentRound!)
+                        
+            thisRound.play(turns: 1000)
+            
+            log("Round \(x) won by \(thisRound.winner!) with a score of \(thisRound.score).")
+            
+            roundCounter.countRound(round: thisRound)
         }
         log(roundCounter)
-
     }
-    
-    func addPlayer(player: Player) -> Player {
-        players.append(player)
-        return player
-    }
-    
-    var winner : Player? {
-        players.first( where: {$0.hasWon()})
-    }
-    
-    var gameOver : Bool {
-        return winner != nil
-    }
-    
 }
