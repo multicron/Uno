@@ -25,9 +25,13 @@ class Hand : Deck {
         
         if haveColorMatch {
             log("We have a color match and can't play Wild +4")
-            unsorted = unsorted.filter { card in card.type != .wildDraw4}
+            unsorted = unsorted.filter {card in
+                switch card {
+                case .wildDraw4: return false
+                default: return true
+                }
+            }
         }
-            
         return Hand.sortCards(unsorted)
     }
     

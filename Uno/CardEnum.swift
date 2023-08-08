@@ -7,27 +7,11 @@
 
 import Foundation
 
-private let log = Logger(tag:#file).log
+private let log = Logger(tag:#file)
 
-enum Color: String {
-    case red = "Red"
-    case green = "Green"
-    case blue = "Blue"
-    case yellow = "Yellow"
-}
-
-enum CardType : String {
-    case wild = "Wild"
-    case wildDraw4 = "Wild +4"
-    case number = "Number"
-    case draw2 = "+2"
-    case skip = "Skip"
-    case reverse = "Reverse"
-}
-
-enum Card : Equatable, CustomStringConvertible {
-    case wildDraw4(color:Color?)
-    case wild(color:Color?)
+enum CardEnum : Equatable, CustomStringConvertible {
+    case wildDraw4
+    case wild
     case draw2(color:Color)
     case skip(color:Color)
     case reverse(color:Color)
@@ -41,8 +25,7 @@ enum Card : Equatable, CustomStringConvertible {
         return counts
     }
     
-    var type : Card {self}
-    
+    var type : CardEnum {self}
     var number : Int? {
         switch self {
         case .number(_, let number): return number
@@ -56,14 +39,13 @@ enum Card : Equatable, CustomStringConvertible {
         case .draw2(let color): return color
         case .skip(let color): return color
         case .reverse(let color): return color
-        case .wild(let color): return color
-        case .wildDraw4(let color): return color
+        default: return nil
         }
     }
     
     var score: Int {
         switch self {
-        case .number(_, let number): return number
+        case .number: return self.number!
         case .draw2, .reverse, .skip: return 20
         case .wild, .wildDraw4: return 50
         }
@@ -72,21 +54,14 @@ enum Card : Equatable, CustomStringConvertible {
     var description: String {
         switch (self) {
         case .number(let color, let number): return "\(color.rawValue) \(number)"
-        case .wild(let color): return [color?.rawValue, "Wild"].compactMap{$0}.joined(separator: " ")
-        case .wildDraw4(let color): return [color?.rawValue, "Wild+4"].compactMap{$0}.joined(separator: " ")
+        case .wild: return "Wild"
+        case .wildDraw4: return "Wild+4"
         case .skip(let color): return "\(color.rawValue) Skip"
         case .reverse(let color): return "\(color.rawValue) Reverse"
         case .draw2(let color): return "\(color.rawValue) Draw2"
         }
     }
     
-    mutating func setColor(color:Color) {
-        switch self {
-        case .wild: self = .wild(color:color)
-        case .wildDraw4: self = .wildDraw4(color: color)
-        default: break
-        }
-    }
     func playable(on cardInPlay: Card) -> Bool {
         switch (self, cardInPlay) {
         case (.wild,_):
@@ -94,7 +69,6 @@ enum Card : Equatable, CustomStringConvertible {
         case (.wildDraw4,_):
             return true
         case (.number(let color, let number),_):
-            log("color: \(color) cardInPlay.color \(cardInPlay.color)")
             return color==cardInPlay.color || number==cardInPlay.number
         case (.draw2(let color), _):
             return color==cardInPlay.color
@@ -105,4 +79,3 @@ enum Card : Equatable, CustomStringConvertible {
         }
     }
 }
-

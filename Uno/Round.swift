@@ -35,7 +35,7 @@ struct Round : CustomStringConvertible {
         drawDeck.addDiscardDeck(deck: discardDeck)
         
 
-        while (drawDeck.topCard().type == .wildDraw4) {
+        while (drawDeck.topCard().type == .wildDraw4(color:nil).type) {
             log("Top card is a Wild +4, reshuffling Draw Deck")
             drawDeck.shuffle()
             }

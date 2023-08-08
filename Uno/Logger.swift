@@ -36,7 +36,7 @@ enum Logger : String {
     }
     
     func shouldLog() -> Bool {
-//        return true
+        return true
         switch self {
         case .Simulator,.RoundHistory:
             return true

@@ -27,24 +27,24 @@ class Deck : CustomStringConvertible {
     func addStandardDeck() {
         
         for _ in 1...4 {
-            addCard(Card(.wild))
-            addCard(Card(.wildDraw4))
+            addCard(.wild(color:nil))
+            addCard(.wildDraw4(color:nil))
         }
         
         Card.allColors.forEach { color in
             for _ in 1...2 {
-                addCard(Card(.draw2,color));
-                addCard(Card(.reverse,color));
-                addCard(Card(.skip,color));
+                addCard(.draw2(color:color));
+                addCard(.reverse(color:color));
+                addCard(.skip(color:color));
             }
             
             Card.allNumbers.forEach{ number in
                 if number==0 {
-                    addCard(Card(.number,color,number))
+                    addCard(.number(color:color,number:number))
                 }
                 else {
-                    addCard(Card(.number,color,number))
-                    addCard(Card(.number,color,number))
+                    addCard(.number(color:color,number:number))
+                    addCard(.number(color:color,number:number))
                 }
             }
         }
@@ -75,8 +75,8 @@ class Deck : CustomStringConvertible {
     func reinitializeWildCards() {
         cards = cards.map { card in
             switch card.type {
-            case .wild: return Card(card.type)
-            case .wildDraw4: return Card(card.type)
+            case .wild: return .wild(color:nil)
+            case .wildDraw4: return .wildDraw4(color: nil)
             default: return card
             }
         }

@@ -48,19 +48,7 @@ struct Player : CustomStringConvertible, Hashable {
     func playCard(card: Card) {
         var cardToPlay = card
         
-        let _ = hand.removeCard(card)
-        
-        if cardToPlay.type == .wild || cardToPlay.type == .wildDraw4 {
-            if let bestColor = self.hand.bestColor() {
-                cardToPlay.color = bestColor;
-            }
-            else {
-                cardToPlay.color = Color.red
-            }
-        }
-        
-        game.currentRound!.discardDeck.addCard(cardToPlay)
-    }
+     }
     
     func playOneTurn(turnIsSkipped: Bool, penaltiesToDraw: Int) -> TurnHistory {
         
@@ -87,12 +75,17 @@ struct Player : CustomStringConvertible, Hashable {
             let playableCards = Hand.sortCards(hand.playableCards(on: topCardOfDiscardDeck))
             log("Playable Cards: ",playableCards.map{$0.description})
             
-            if playableCards.count > 0 {
-                let cardToPlay = playableCards[0]
+            if !playableCards.isEmpty {
+                var cardToPlay = playableCards[0]
+                let _ = hand.removeCard(cardToPlay)
                 
-                playCard(card: playableCards[0])
+                let bestColor = self.hand.bestColor()
+                cardToPlay.setColor(color: bestColor ?? Color.red)
+                
                 log("Playing ","\"",cardToPlay.description,"\"")
                 
+                game.currentRound!.discardDeck.addCard(cardToPlay)
+
                 turn.cardPlayed = cardToPlay
             }
             else {
