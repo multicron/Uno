@@ -14,7 +14,8 @@ fileprivate let log = Logger(file:#file).log
 class Simulation {
 
     static func main() {
-        for _ in (1...10) {
+        for x in (1...10) {
+            log("--- Simulation \(x) ---")
             let game = Game();
             game.play();
         }

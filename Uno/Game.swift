@@ -14,7 +14,7 @@ class Game {
     
     func play() {        
 
-        for x in 1...3 {
+        for x in 1...10 {
             log("--- Round #\(x) ---")
             
             var thisRound = Round()
@@ -28,7 +28,9 @@ class Game {
                         
             thisRound.play(turns: 1000)
             
-            log("Round \(x) won by \(thisRound.winner!) with a score of \(thisRound.score).")
+            log("Round \(x) won by \(thisRound.winner) with a score of \(thisRound.score).")
+            
+            thisRound.winner?.addScore(thisRound.score)
             
             roundCounter.countRound(round: thisRound)
         }

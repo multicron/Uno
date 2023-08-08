@@ -44,15 +44,15 @@ enum Logger : String {
 //        return true
         switch self {
         case .Simulator,
-                .Round:
+                .Game,
+                .RoundCounts:
             return true
         case .Card,
                 .CardCounts,
+                .Round,
                 .Deck,
-                .Game,
-                .RoundHistory,
-                .RoundCounts,
                 .RoundTurns,
+                .RoundHistory,
                 .Hand,
                 .Player,
                 .Strategy,

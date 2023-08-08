@@ -33,14 +33,14 @@ struct Round : CustomStringConvertible {
         drawDeck.addDiscardDeck(deck: discardDeck)
         
 
+        log(self)
+
         while case .wildDraw4(color:nil) = drawDeck.topCard() {
             log("Top card is a Wild +4, reshuffling Draw Deck")
             drawDeck.shuffle()
             }
                 
         discardDeck.addCard(drawDeck.drawCard())
-
-        log(self)
     }
 
     var winner : Player? {
