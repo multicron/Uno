@@ -28,7 +28,7 @@ enum Card : Equatable, Comparable, CustomStringConvertible {
     case wild(color:Color?)
     case wildDraw4(color:Color?)
 
-    static let allColors : [Color] = [.red,.green,.blue,.yellow]
+    static let allColors : [Color] = [.blue,.green,.red,.yellow]
     static let allNumbers : [Int] = [0,1,2,3,4,5,6,7,8,9]
     
     static var zeroedCardColorCounts: [Color:Int] {
@@ -37,8 +37,27 @@ enum Card : Equatable, Comparable, CustomStringConvertible {
         return counts
     }
 
+    static func compareWildCards (color0: Color?, color1: Color?) -> Bool {
+        // Returns true for "<", false for ">="
+        
+        // No color assigned is sorted less than color assigned
+        if color0 == nil && color1 != nil { return true }
+        if color0 != nil && color1 == nil { return false }
+        
+        // If both have a color assigned, compare the colors
+        if let c0 = color0, let c1 = color1 {
+            return c0 < c1
+        }
+        // Otherwise, neither has a color assigned and they are equal
+        else {
+            return false
+        }
+    }
+    
     static func < (card0: Card, card1: Card) -> Bool {
         switch (card0,card1) {
+            
+        // Number cards are sorted by color and then number
         case (.number(let color0, let number0),
               .number(let color1, let number1)):
             if (color0 != color1) {
@@ -47,6 +66,26 @@ enum Card : Equatable, Comparable, CustomStringConvertible {
             else {
                 return number0 < number1
             }
+
+        // Colored action cards are sorted by color
+        case (.skip(let color0),.skip(let color1)):
+            return color0 < color1
+        case (.reverse(let color0),.reverse(let color1)):
+            return color0 < color1
+        case (.draw2(let color0),.draw2(let color1)):
+            return color0 < color1
+
+        // Wildcards are sorted by color, if any
+
+        case (.wild(let color0),.wild(let color1)):
+            return Self.compareWildCards(color0: color0, color1: color1)
+
+        case (.wildDraw4(let color0),.wildDraw4(let color1)):
+            return Self.compareWildCards(color0: color0, color1: color1)
+
+        // The rest of these cases sort the card types into the order
+        // .number, .skip, .reverse, .draw2, .wild, .wildDraw4
+            
         case (.number, .reverse) : return true
         case (.number, .draw2): return true
         case (.number, .skip) : return true
