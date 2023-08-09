@@ -9,15 +9,95 @@ import XCTest
 
 final class DeckTests: XCTestCase {
     
+    var stdDeck1 = Deck()
+    var stdDeck2 = Deck()
+    var testDeck1 = Deck()
+
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        stdDeck1 = Deck()
+        stdDeck1.addStandardDeck()
+        
+        stdDeck2 = Deck()
+        stdDeck2.addStandardDeck()
+        
+        testDeck1 = Deck()
     }
     
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
     
-    testHandSize() throws {
-        var hand = Hand()
+    func testSize() throws {
+        XCTAssert(stdDeck1.count == 108)
     }
+    
+    func testEquality() throws {
+        XCTAssert(stdDeck1 == stdDeck2)
+    }
+    
+    func testShuffle() throws {
+        stdDeck1.shuffle()
+        stdDeck2.shuffle()
+        
+        // There is a very tiny chance the two shuffles are the same!
+        
+        XCTAssert(stdDeck1.cards != stdDeck2.cards)
+    }
+ 
+    func testSort() throws {
+        stdDeck1.shuffle()
+        stdDeck2.shuffle()
+
+        let sort1 = Deck.sortCards(stdDeck1.cards)
+        let sort2 = Deck.sortCards(stdDeck2.cards)
+        
+        XCTAssert(sort1 == sort2)
+    }
+
+    func testSortAlreadySorted() throws {
+        stdDeck1.shuffle()
+
+        let sort1 = Deck.sortCards(stdDeck1.cards)
+        let sort2 = Deck.sortCards(sort1)
+    
+        XCTAssertEqual(sort1,sort2,"Sorting an already sorted deck should produce the same deck")
+    }
+    
+    func testEmpty() throws {
+        XCTAssertEqual(testDeck1.count, 0,"Empty deck has a count of 0")
+        XCTAssertEqual(Deck.sortCards(testDeck1.cards),[],"Sorting an empty deck produces empty array")
+    }
+
+    func testOneCard() throws {
+        
+        testDeck1.addCard(.skip(color: .red))
+        
+        XCTAssertEqual(testDeck1.count, 1,"Deck has a count of 1")
+        
+        XCTAssertEqual(Deck.sortCards(testDeck1.cards),
+                       testDeck1.cards,
+                       "Sorting a deck of size 1 produces the same deck")
+    }
+
+    func testTopCardAndDraw() throws {
+        
+        let topCard = stdDeck1.topCard()
+        let drawnCard = stdDeck1.drawCard()
+
+        XCTAssertEqual(topCard, Card.number(color:.yellow,number:9),"Top card of new deck is Yellow 9")
+        XCTAssertEqual(topCard, drawnCard, "Top card should be same as drawn card")
+    }
+    
+    func testReshuffle() throws {
+        
+        testDeck1.addDiscardDeck(deck: stdDeck1)
+        
+        testDeck1.reshuffle()
+        
+        XCTAssertEqual(testDeck1.count, 107, "After reshuffle, deck should be full minus one")
+                
+        guard let discDeck = testDeck1.discardDeck else { return XCTFail("No discardDeck after reshuffle") }
+        
+        XCTAssertEqual(discDeck.count, 1, "After reshuffle, discardDeck should have one card")
+    }
+    
 }

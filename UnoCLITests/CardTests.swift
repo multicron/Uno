@@ -6,7 +6,6 @@
 //
 
 import XCTest
-@testable import Uno
 
 final class CardTests: XCTestCase {
     
