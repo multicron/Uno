@@ -36,7 +36,7 @@ struct Round : CustomStringConvertible {
         log(self)
 
         while case .wildDraw4(color:nil) = drawDeck.topCard() {
-            log("Top card is a Wild +4, reshuffling Draw Deck")
+            log("Top card is a Wild+4, reshuffling Draw Deck")
             drawDeck.shuffle()
             }
                 
