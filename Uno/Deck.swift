@@ -9,17 +9,25 @@ import Foundation
 
 fileprivate let log = Logger(file:#file).log
 
-class Deck : CustomStringConvertible {
+class Deck : CustomStringConvertible, Equatable {
     var cards: [Card] = []
     var description: String {
         return "Deck: \(cards.count) card(s) " +
-        (cards.map {card in card.description}).joined(separator: ", ")
+        (cards.reversed().map {card in card.description}).joined(separator: ", ")
     }
     var discardDeck: Deck?
     var count: Int {
         return self.cards.count
     }
     
+    static func == (lhs: Deck, rhs: Deck) -> Bool {
+        return lhs.cards == rhs.cards
+    }
+    
+    static func sortCards(_ cards: [Card]) -> [Card] {
+        return cards.sorted()
+    }
+
     func addDiscardDeck(deck: Deck) {
         self.discardDeck = deck
     }
@@ -69,7 +77,7 @@ class Deck : CustomStringConvertible {
             self.cards = discardDeck.cards
             discardDeck.cards = [savedCard]
         }
-        else { log("No discard Deck to reshuffle")}
+        else { assertionFailure("No discard Deck to reshuffle")}
     }
     
     func reinitializeWildCards() {
