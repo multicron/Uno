@@ -22,9 +22,10 @@ class Hand : Deck {
         var unsorted = self.cards.filter{ card in card.playable(on: cardToPlayOn)}
         
         let haveColorMatch = unsorted.filter({ card in card.color == cardToPlayOn.color}).count > 0
-        
-        if haveColorMatch {
-            log("We have a color match and can't play Wild +4")
+        let haveWildDraw4 = unsorted.filter({ card in card == .wildDraw4(color: nil)}).count > 0
+
+        if haveColorMatch && haveWildDraw4 {
+            log("We have a color match and can't play Wild+4")
             unsorted = unsorted.filter {card in
                 switch card {
                 case .wildDraw4: return false
@@ -35,12 +36,6 @@ class Hand : Deck {
         return Hand.sortCards(unsorted)
     }
      
-    static func sortCards(_ cards: [Card]) -> [Card] {
-        log("Sorting Hand: \(cards)")
-        log("Sort result: \(cards.sorted())")
-        return cards.sorted()
-    }
-
      func removeCard(_ cardToRemove: Card) -> Bool {
         if let index = self.cards.firstIndex(of: cardToRemove) {
             self.cards.remove(at: index)
