@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "9BCA59F3-2572-4D4A-ADA6-83DAF10DEDB8",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:Uno.xcodeproj",
+        "identifier" : "F09746EC2A8330E5002BD744",
+        "name" : "UnoCLITests"
+      }
+    }
+  ],
+  "version" : 1
+}

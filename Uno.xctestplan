@@ -1,0 +1,37 @@
+{
+  "configurations" : [
+    {
+      "id" : "6723BA81-EE21-4EC8-AB24-45F831047CF2",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:Uno.xcodeproj",
+      "identifier" : "F070533E2A79C30700F8577A",
+      "name" : "Uno"
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:Uno.xcodeproj",
+        "identifier" : "F07053522A79C30800F8577A",
+        "name" : "UnoTests"
+      }
+    },
+    {
+      "enabled" : false,
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:Uno.xcodeproj",
+        "identifier" : "F070535C2A79C30800F8577A",
+        "name" : "UnoUITests"
+      }
+    }
+  ],
+  "version" : 1
+}

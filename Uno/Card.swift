@@ -9,21 +9,25 @@ import Foundation
 
 fileprivate let log = Logger(file:#file).log
 
-enum Color: String {
+enum Color: String, Comparable {
     case red = "Red"
     case green = "Green"
     case blue = "Blue"
     case yellow = "Yellow"
+    
+    static func < (color1:Color, color2:Color) -> Bool {
+        return color1.rawValue < color2.rawValue
+    }
 }
 
-enum Card : Equatable, CustomStringConvertible {
-    case wildDraw4(color:Color?)
-    case wild(color:Color?)
+enum Card : Equatable, Comparable, CustomStringConvertible {
+    case number(color:Color,number: Int)
     case draw2(color:Color)
     case skip(color:Color)
     case reverse(color:Color)
-    case number(color:Color,number: Int)
-    
+    case wild(color:Color?)
+    case wildDraw4(color:Color?)
+
     static let allColors : [Color] = [.red,.green,.blue,.yellow]
     static let allNumbers : [Int] = [0,1,2,3,4,5,6,7,8,9]
     
@@ -32,7 +36,36 @@ enum Card : Equatable, CustomStringConvertible {
         allColors.forEach {color in counts[color] = 0}
         return counts
     }
-        
+
+    static func < (card0: Card, card1: Card) -> Bool {
+        switch (card0,card1) {
+        case (.number(let color0, let number0),
+              .number(let color1, let number1)):
+            if (color0 != color1) {
+                return color0 < color1
+            }
+            else {
+                return number0 < number1
+            }
+        case (.number, .reverse) : return true
+        case (.number, .draw2): return true
+        case (.number, .skip) : return true
+        case (.number, .wild) : return true
+        case (.number, .wildDraw4) : return true
+        case (.skip, .reverse): return true
+        case (.skip, .draw2): return true
+        case (.skip, .wild): return true
+        case (.skip, .wildDraw4): return true
+        case (.reverse, .draw2): return true
+        case (.reverse, .wild): return true
+        case (.reverse, .wildDraw4): return true
+        case (.draw2, .wild): return true
+        case (.draw2, .wildDraw4): return true
+        case (.wild, .wildDraw4): return true
+        default: return false
+        }
+    }
+
     var number : Int? {
         switch self {
         case .number(_, let number): return number

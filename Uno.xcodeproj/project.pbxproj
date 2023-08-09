@@ -16,7 +16,6 @@
 		F07053622A79C30800F8577A /* UnoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07053612A79C30800F8577A /* UnoUITests.swift */; };
 		F07053642A79C30800F8577A /* UnoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07053632A79C30800F8577A /* UnoUITestsLaunchTests.swift */; };
 		F08652AE2A7ABB27007A1405 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08652AD2A7ABB27007A1405 /* Player.swift */; };
-		F08652B02A7ABB74007A1405 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08652AF2A7ABB74007A1405 /* Card.swift */; };
 		F08652B22A7ABB9D007A1405 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08652B12A7ABB9D007A1405 /* Deck.swift */; };
 		F08652B42A7ABBCA007A1405 /* Hand.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08652B32A7ABBCA007A1405 /* Hand.swift */; };
 		F08652B62A7AC15B007A1405 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08652B52A7AC15B007A1405 /* Logger.swift */; };
@@ -29,6 +28,26 @@
 		F097469B2A814BE4002BD744 /* RoundCounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F097469A2A814BE4002BD744 /* RoundCounts.swift */; };
 		F097469D2A81841D002BD744 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = F097469C2A81841D002BD744 /* Game.swift */; };
 		F09746A22A82D787002BD744 /* GameCounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09746A02A82D563002BD744 /* GameCounts.swift */; };
+		F09746A42A82F6B7002BD744 /* CardTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09746A32A82F6B7002BD744 /* CardTest.swift */; };
+		F09746F02A8330E5002BD744 /* UnoCLITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09746EF2A8330E5002BD744 /* UnoCLITests.swift */; };
+		F09746F62A83350F002BD744 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08652AF2A7ABB74007A1405 /* Card.swift */; };
+		F09746F92A83398C002BD744 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08652AF2A7ABB74007A1405 /* Card.swift */; };
+		F09746FA2A8339AB002BD744 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08652B52A7AC15B007A1405 /* Logger.swift */; };
+		F09746FB2A83411C002BD744 /* Hand.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08652B32A7ABBCA007A1405 /* Hand.swift */; };
+		F09746FC2A834651002BD744 /* UnoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07053422A79C30700F8577A /* UnoApp.swift */; };
+		F09746FD2A834651002BD744 /* UnoDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07053442A79C30700F8577A /* UnoDocument.swift */; };
+		F09746FE2A834651002BD744 /* RoundCounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F097469A2A814BE4002BD744 /* RoundCounts.swift */; };
+		F09746FF2A834651002BD744 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08652B12A7ABB9D007A1405 /* Deck.swift */; };
+		F09747002A834651002BD744 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = F097469C2A81841D002BD744 /* Game.swift */; };
+		F09747012A834651002BD744 /* GameCounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09746A02A82D563002BD744 /* GameCounts.swift */; };
+		F09747022A834651002BD744 /* Simulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09746982A814030002BD744 /* Simulation.swift */; };
+		F09747032A834651002BD744 /* RoundHistoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08652B92A7C93C7007A1405 /* RoundHistoryItem.swift */; };
+		F09747042A834651002BD744 /* Strategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08652BD2A7C9755007A1405 /* Strategy.swift */; };
+		F09747052A834651002BD744 /* TurnHistoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08652BF2A7C9C63007A1405 /* TurnHistoryItem.swift */; };
+		F09747062A834651002BD744 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08652AD2A7ABB27007A1405 /* Player.swift */; };
+		F09747072A834651002BD744 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07053462A79C30700F8577A /* ContentView.swift */; };
+		F09747082A834651002BD744 /* Round.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08652BB2A7C96EB007A1405 /* Round.swift */; };
+		F09747092A834651002BD744 /* CardCounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08652B72A7AEBAF007A1405 /* CardCounts.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +59,13 @@
 			remoteInfo = Uno;
 		};
 		F070535E2A79C30800F8577A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F07053372A79C30700F8577A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F070533E2A79C30700F8577A;
+			remoteInfo = Uno;
+		};
+		F09746F72A8337C6002BD744 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F07053372A79C30700F8577A /* Project object */;
 			proxyType = 1;
@@ -76,6 +102,11 @@
 		F097469A2A814BE4002BD744 /* RoundCounts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundCounts.swift; sourceTree = "<group>"; };
 		F097469C2A81841D002BD744 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		F09746A02A82D563002BD744 /* GameCounts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCounts.swift; sourceTree = "<group>"; };
+		F09746A32A82F6B7002BD744 /* CardTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTest.swift; sourceTree = "<group>"; };
+		F09746A52A82F89C002BD744 /* Uno.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Uno.xctestplan; sourceTree = "<group>"; };
+		F09746E82A832B19002BD744 /* Uno2.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = file; path = Uno2.xctestplan; sourceTree = SOURCE_ROOT; };
+		F09746ED2A8330E5002BD744 /* UnoCLITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnoCLITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F09746EF2A8330E5002BD744 /* UnoCLITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnoCLITests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,15 +131,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F09746EA2A8330E5002BD744 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		F07053362A79C30700F8577A = {
 			isa = PBXGroup;
 			children = (
+				F09746A52A82F89C002BD744 /* Uno.xctestplan */,
+				F09746E82A832B19002BD744 /* Uno2.xctestplan */,
 				F07053412A79C30700F8577A /* Uno */,
 				F07053562A79C30800F8577A /* UnoTests */,
 				F07053602A79C30800F8577A /* UnoUITests */,
+				F09746EE2A8330E5002BD744 /* UnoCLITests */,
 				F07053402A79C30700F8577A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -119,6 +160,7 @@
 				F070533F2A79C30700F8577A /* Uno.app */,
 				F07053532A79C30800F8577A /* UnoTests.xctest */,
 				F070535D2A79C30800F8577A /* UnoUITests.xctest */,
+				F09746ED2A8330E5002BD744 /* UnoCLITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -163,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				F07053572A79C30800F8577A /* UnoTests.swift */,
+				F09746A32A82F6B7002BD744 /* CardTest.swift */,
 			);
 			path = UnoTests;
 			sourceTree = "<group>";
@@ -174,6 +217,14 @@
 				F07053632A79C30800F8577A /* UnoUITestsLaunchTests.swift */,
 			);
 			path = UnoUITests;
+			sourceTree = "<group>";
+		};
+		F09746EE2A8330E5002BD744 /* UnoCLITests */ = {
+			isa = PBXGroup;
+			children = (
+				F09746EF2A8330E5002BD744 /* UnoCLITests.swift */,
+			);
+			path = UnoCLITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,6 +283,24 @@
 			productReference = F070535D2A79C30800F8577A /* UnoUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		F09746EC2A8330E5002BD744 /* UnoCLITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F09746F12A8330E5002BD744 /* Build configuration list for PBXNativeTarget "UnoCLITests" */;
+			buildPhases = (
+				F09746E92A8330E5002BD744 /* Sources */,
+				F09746EA2A8330E5002BD744 /* Frameworks */,
+				F09746EB2A8330E5002BD744 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F09746F82A8337C6002BD744 /* PBXTargetDependency */,
+			);
+			name = UnoCLITests;
+			productName = UnoCLITests;
+			productReference = F09746ED2A8330E5002BD744 /* UnoCLITests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -253,6 +322,9 @@
 						CreatedOnToolsVersion = 15.0;
 						TestTargetID = F070533E2A79C30700F8577A;
 					};
+					F09746EC2A8330E5002BD744 = {
+						CreatedOnToolsVersion = 15.0;
+					};
 				};
 			};
 			buildConfigurationList = F070533A2A79C30700F8577A /* Build configuration list for PBXProject "Uno" */;
@@ -271,6 +343,7 @@
 				F070533E2A79C30700F8577A /* Uno */,
 				F07053522A79C30800F8577A /* UnoTests */,
 				F070535C2A79C30800F8577A /* UnoUITests */,
+				F09746EC2A8330E5002BD744 /* UnoCLITests */,
 			);
 		};
 /* End PBXProject section */
@@ -299,6 +372,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F09746EB2A8330E5002BD744 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -311,8 +391,8 @@
 				F08652AE2A7ABB27007A1405 /* Player.swift in Sources */,
 				F07053432A79C30700F8577A /* UnoApp.swift in Sources */,
 				F08652BA2A7C93C7007A1405 /* RoundHistoryItem.swift in Sources */,
-				F08652B02A7ABB74007A1405 /* Card.swift in Sources */,
 				F09746A22A82D787002BD744 /* GameCounts.swift in Sources */,
+				F09746F62A83350F002BD744 /* Card.swift in Sources */,
 				F08652BC2A7C96EB007A1405 /* Round.swift in Sources */,
 				F08652B42A7ABBCA007A1405 /* Hand.swift in Sources */,
 				F08652BE2A7C9755007A1405 /* Strategy.swift in Sources */,
@@ -331,6 +411,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F07053582A79C30800F8577A /* UnoTests.swift in Sources */,
+				F09746A42A82F6B7002BD744 /* CardTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,6 +421,31 @@
 			files = (
 				F07053622A79C30800F8577A /* UnoUITests.swift in Sources */,
 				F07053642A79C30800F8577A /* UnoUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F09746E92A8330E5002BD744 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F09746FB2A83411C002BD744 /* Hand.swift in Sources */,
+				F09747092A834651002BD744 /* CardCounts.swift in Sources */,
+				F09747002A834651002BD744 /* Game.swift in Sources */,
+				F09747072A834651002BD744 /* ContentView.swift in Sources */,
+				F09747022A834651002BD744 /* Simulation.swift in Sources */,
+				F09746FC2A834651002BD744 /* UnoApp.swift in Sources */,
+				F09747052A834651002BD744 /* TurnHistoryItem.swift in Sources */,
+				F09746F02A8330E5002BD744 /* UnoCLITests.swift in Sources */,
+				F09747042A834651002BD744 /* Strategy.swift in Sources */,
+				F09746FD2A834651002BD744 /* UnoDocument.swift in Sources */,
+				F09747082A834651002BD744 /* Round.swift in Sources */,
+				F09746FF2A834651002BD744 /* Deck.swift in Sources */,
+				F09746FA2A8339AB002BD744 /* Logger.swift in Sources */,
+				F09747012A834651002BD744 /* GameCounts.swift in Sources */,
+				F09746FE2A834651002BD744 /* RoundCounts.swift in Sources */,
+				F09747032A834651002BD744 /* RoundHistoryItem.swift in Sources */,
+				F09747062A834651002BD744 /* Player.swift in Sources */,
+				F09746F92A83398C002BD744 /* Card.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,6 +461,11 @@
 			isa = PBXTargetDependency;
 			target = F070533E2A79C30700F8577A /* Uno */;
 			targetProxy = F070535E2A79C30800F8577A /* PBXContainerItemProxy */;
+		};
+		F09746F82A8337C6002BD744 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F070533E2A79C30700F8577A /* Uno */;
+			targetProxy = F09746F72A8337C6002BD744 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -582,6 +693,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = art.xrvision.UnoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TEST_TARGET_NAME = Uno;
@@ -599,9 +711,40 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = art.xrvision.UnoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TEST_TARGET_NAME = Uno;
+			};
+			name = Release;
+		};
+		F09746F22A8330E5002BD744 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LZ3UTU8883;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = art.xrvision.UnoCLITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		F09746F32A8330E5002BD744 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LZ3UTU8883;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = art.xrvision.UnoCLITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -640,6 +783,15 @@
 			buildConfigurations = (
 				F070536E2A79C30800F8577A /* Debug */,
 				F070536F2A79C30800F8577A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F09746F12A8330E5002BD744 /* Build configuration list for PBXNativeTarget "UnoCLITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F09746F22A8330E5002BD744 /* Debug */,
+				F09746F32A8330E5002BD744 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

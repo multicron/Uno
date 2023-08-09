@@ -34,40 +34,11 @@ class Hand : Deck {
         }
         return Hand.sortCards(unsorted)
     }
-    
-    static func compareCards(card0: Card, card1: Card) -> Bool {
-        switch (card0,card1) {
-        case (.number, .number):
-            if let color0 = card0.color, let color1 = card1.color {
-                if (color0 != color1) {
-                    return color0.rawValue < color1.rawValue
-                }
-                else if let number0 = card0.number, let number1 = card1.number {
-                    return number0 < number1
-                }
-            }
-            return false
-        case (.number, .reverse) : return true
-        case (.number, .draw2): return true
-        case (.number, .skip) : return true
-        case (.number, .wild) : return true
-        case (.number, .wildDraw4) : return true
-        case (.skip, .reverse): return true
-        case (.skip, .draw2): return true
-        case (.skip, .wild): return true
-        case (.skip, .wildDraw4): return true
-        case (.reverse, .draw2): return true
-        case (.reverse, .wild): return true
-        case (.reverse, .wildDraw4): return true
-        case (.draw2, .wild): return true
-        case (.draw2, .wildDraw4): return true
-        case (.wild, .wildDraw4): return true
-        default: return false
-        }
-    }
-    
+     
     static func sortCards(_ cards: [Card]) -> [Card] {
-        return cards.sorted(by: Self.compareCards)
+        log("Sorting Hand: \(cards)")
+        log("Sort result: \(cards.sorted())")
+        return cards.sorted()
     }
 
      func removeCard(_ cardToRemove: Card) -> Bool {

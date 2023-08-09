@@ -6,8 +6,33 @@
 	<dict>
 		<key>Uno.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<true/>
 			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>F070533E2A79C30700F8577A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F07053522A79C30800F8577A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F070535C2A79C30800F8577A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F09746EC2A8330E5002BD744</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

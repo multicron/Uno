@@ -20,9 +20,9 @@ struct Simulation {
     }
     
     mutating func run() {
-        for x in (1...1000) {
+        for x in (1...1) {
             log("--- Simulation \(x) ---")
-            var game = Game(winningScore: 500);
+            var game = Game(winningScore: 1);
             game.play()
             gameCounter.countGame(game:game)
         }

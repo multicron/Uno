@@ -23,8 +23,9 @@ enum Logger : String {
     case Card
     case Player
     case Unknown
-    case Unused
-    
+    case Unused1
+    case Unused2
+
     init(tag:String) {
         if let valid = Logger(rawValue: tag) {
             self = valid
@@ -43,13 +44,13 @@ enum Logger : String {
     }
     
     func shouldLog() -> Bool {
-//        return true
+        return true
         switch self {
         case .Unknown:
             return true
         case .Simulation,
                 .GameCounts,
-                .Unused:
+                .Unused1:
             return true
         case .Card,
                 .Game,
@@ -63,7 +64,7 @@ enum Logger : String {
                 .Player,
                 .Strategy,
                 .TurnHistory,
-                .Unused:
+                .Unused2:
             return false
         }
     }
