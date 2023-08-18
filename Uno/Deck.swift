@@ -24,8 +24,12 @@ class Deck : CustomStringConvertible, Equatable {
         return lhs.cards == rhs.cards
     }
     
-    static func sortCards(_ cards: [Card]) -> [Card] {
+    static func sortedCards(_ cards: [Card]) -> [Card] {
         return cards.sorted()
+    }
+
+    static func sortedCards(_ cards: [Card], by sortFunc: (Card,Card) -> Bool) -> [Card] {
+        return cards.sorted(by: sortFunc)
     }
 
     func addDiscardDeck(deck: Deck) {

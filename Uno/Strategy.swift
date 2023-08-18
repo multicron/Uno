@@ -9,7 +9,7 @@ import Foundation
 
 fileprivate let log = Logger(file:#file).log
 
-enum Tactic {
+enum Tactic : CustomStringConvertible {
     case zingAlways
     case zingOnOneCard
     case zingOnTwoCards
@@ -17,6 +17,8 @@ enum Tactic {
     case zingOnAnyoneTwoCards
     case followColor
     case followNumber
+    
+    var description: String { String(reflecting: self) }
 }
 
 struct Strategy {
@@ -24,6 +26,10 @@ struct Strategy {
     
     init(_ strategies : Tactic...) {
         self.list = strategies
+    }
+    
+    var description: String {
+        self.list.map{tactic in tactic.description}.joined(separator: ", ")
     }
     
     func includes(_ item: Tactic) -> Bool {

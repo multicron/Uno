@@ -11,7 +11,7 @@ fileprivate let log = Logger(file:#file).log
 
 class Hand : Deck {
     override var description: String {
-        return Hand.sortCards(cards).description
+        return Hand.sortedCards(cards).description
     }
 
     var isEmpty: Bool { self.cards.isEmpty }
@@ -33,7 +33,7 @@ class Hand : Deck {
                 }
             }
         }
-        return Hand.sortCards(unsorted)
+        return Hand.sortedCards(unsorted)
     }
      
      func removeCard(_ cardToRemove: Card) -> Bool {

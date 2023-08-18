@@ -121,7 +121,15 @@ class Player : CustomStringConvertible, Hashable {
             return nil
         }
         
-        let playableCards = Hand.sortCards(hand.playableCards(on: topCardOfDiscardDeck))
+        let playableCards: [Card]
+        
+        if strategy.includes(.followColor) {
+            playableCards = Hand.sortedCards(hand.playableCards(on: topCardOfDiscardDeck))
+        }
+        else {
+            playableCards = Hand.sortedCards(hand.playableCards(on: topCardOfDiscardDeck),by: Card.lessThanNumberFirst)
+        }
+
         log("Playable Cards: ",playableCards.map{$0.description})
         
         if playableCards.isEmpty {

@@ -18,9 +18,9 @@ struct Game {
     mutating func play() {
 
         self.addPlayer(Player("Naive 1", Strategy(.followColor)))
-        self.addPlayer(Player("Naive 2", Strategy(.followColor)))
-        self.addPlayer(Player("Naive 3", Strategy(.followColor)))
-        self.addPlayer(Player("Naive 4", Strategy(.followColor)))
+        self.addPlayer(Player("Naive 2", Strategy(.zingOnTwoCards)))
+//        self.addPlayer(Player("Naive 3", Strategy(.followColor)))
+//        self.addPlayer(Player("Naive 4", Strategy(.followColor)))
 //                self.addPlayer(Player("zingAlways 1", Strategy(.zingAlways)))
 //        self.addPlayer(Player("zingOnOneCard", Strategy(.zingOnOneCard)))
 //        self.addPlayer(Player("zingAlways 2", Strategy(.zingAlways)))

@@ -55,7 +55,7 @@ enum Card : Equatable, Comparable, CustomStringConvertible {
     }
     
     static func < (card0: Card, card1: Card) -> Bool {
-        return lessThanColorFirst(card0: <#T##Card#>, card1: <#T##Card#>)
+        return lessThanColorFirst(card0: card0, card1: card1)
     }
     
     static func lessThanNumberFirst (card0: Card, card1: Card) -> Bool {
