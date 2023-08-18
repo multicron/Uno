@@ -11,16 +11,17 @@ fileprivate let log = Logger(file:#file).log
 fileprivate let log_history = Logger(tag:"RoundHistory").log
 fileprivate let log_turns = Logger(tag:"RoundTurns").log
 
-struct Round : CustomStringConvertible {
+class Round : CustomStringConvertible {
     var players : [Player] = []
     var drawDeck = Deck()
     var discardDeck = Deck()
     var cardCounter = CardCounts()
     var history = RoundHistoryItem()
-    var currentPlayer : Int = 0;
-    var skipNextPlayer : Bool = false;
-    var penaltyDrawsNextPlayer : Int = 0;
-    var turnDirection : Int = 1;
+    private var _currentPlayer : Int = 0
+    var currentPlayer : Int = 0
+    var skipNextPlayer : Bool = false
+    var penaltyDrawsNextPlayer : Int = 0
+    var turnDirection : Int = 1
 
     var description: String {
         return "drawDeck: \(drawDeck.description)"
@@ -31,7 +32,7 @@ struct Round : CustomStringConvertible {
         drawDeck.addStandardDeck()
         drawDeck.shuffle()
         drawDeck.addDiscardDeck(deck: discardDeck)
-        
+
 
         log(self)
 
@@ -51,15 +52,18 @@ struct Round : CustomStringConvertible {
         return winner != nil
     }
     
-    mutating func addPlayer(_ player: Player) {
+    func addPlayer(_ player: Player) {
         players.append(player)
         player.setRound(self)
     }
     
     var score: Int { self.players.reduce(0) {accum, player in accum + player.hand.score} }
 
+    func chooseRandomStartingPlayer() {
+        currentPlayer = Int.random(in:0..<players.count)
+    }
     
-    mutating func handleActionCard(_ card: Card) {
+    func handleActionCard(_ card: Card) {
         switch card {
         case .skip:
             skipNextPlayer = true
@@ -77,7 +81,7 @@ struct Round : CustomStringConvertible {
         }
     }
     
-    mutating func handleInitialWildcard(_ card: Card, player: Player) {
+    func handleInitialWildcard(_ card: Card, player: Player) {
         switch card {
         case .wildDraw4(color: _):
             assertionFailure("Card on top of discard deck at start of play is \(card)")
@@ -89,13 +93,22 @@ struct Round : CustomStringConvertible {
         }
     }
     
-    mutating func advanceToNextPlayer() {
-        currentPlayer += self.turnDirection
-        if (currentPlayer < 0) {currentPlayer = players.count - 1}
-        currentPlayer %= players.count
+    func advanceToNextPlayer() {
+        currentPlayer = nextPlayerIndex()
     }
     
-    mutating func play(turns: Int) {
+    func nextPlayerIndex() -> Int {
+        var playerIndex = currentPlayer + self.turnDirection
+        if (playerIndex < 0) {playerIndex = players.count - 1}
+        playerIndex %= players.count
+        return playerIndex
+    }
+    
+    func nextPlayer() -> Player {
+        return players[nextPlayerIndex()]
+    }
+    
+    func play(turns: Int) {
         
         // First player gets the effects of the first card
         //
@@ -115,7 +128,8 @@ struct Round : CustomStringConvertible {
             
             
             let turn = player.playOneTurn(turnIsSkipped:skipNextPlayer,
-                                          penaltiesToDraw: penaltyDrawsNextPlayer)
+                                          penaltiesToDraw: penaltyDrawsNextPlayer,
+                                          players: players)
             
             history.recordTurn(player: player, turn: turn)
 

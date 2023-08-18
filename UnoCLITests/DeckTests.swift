@@ -59,23 +59,23 @@ final class DeckTests: XCTestCase {
         let sort1 = Deck.sortCards(stdDeck1.cards)
         let sort2 = Deck.sortCards(sort1)
     
-        XCTAssertEqual(sort1,sort2,"Sorting an already sorted deck should produce the same deck")
+        XCTAssertEqual(sort1,sort2,"Sorting an already sorted deck didn't produce the same deck")
     }
     
     func testEmpty() throws {
         XCTAssertEqual(testDeck1.count, 0,"Empty deck has a count of 0")
-        XCTAssertEqual(Deck.sortCards(testDeck1.cards),[],"Sorting an empty deck produces empty array")
+        XCTAssertEqual(Deck.sortCards(testDeck1.cards),[],"Sorting an empty deck didn't produce an empty array")
     }
 
     func testOneCard() throws {
         
         testDeck1.addCard(.skip(color: .red))
         
-        XCTAssertEqual(testDeck1.count, 1,"Deck has a count of 1")
+        XCTAssertEqual(testDeck1.count, 1,"Deck of size 1 has count != 1")
         
         XCTAssertEqual(Deck.sortCards(testDeck1.cards),
                        testDeck1.cards,
-                       "Sorting a deck of size 1 produces the same deck")
+                       "Sorting a deck of size 1 didn't produce and equal deck")
     }
 
     func testTopCardAndDraw() throws {
@@ -83,8 +83,8 @@ final class DeckTests: XCTestCase {
         let topCard = stdDeck1.topCard()
         let drawnCard = stdDeck1.drawCard()
 
-        XCTAssertEqual(topCard, Card.number(color:.yellow,number:9),"Top card of new deck is Yellow 9")
-        XCTAssertEqual(topCard, drawnCard, "Top card should be same as drawn card")
+        XCTAssertEqual(topCard, Card.number(color:.yellow,number:9),"Top card of new deck isn't Yellow 9")
+        XCTAssertEqual(topCard, drawnCard, "Top card isn't the same as drawn card")
     }
     
     func testReshuffle() throws {
@@ -93,11 +93,11 @@ final class DeckTests: XCTestCase {
         
         testDeck1.reshuffle()
         
-        XCTAssertEqual(testDeck1.count, 107, "After reshuffle, deck should be full minus one")
+        XCTAssertEqual(testDeck1.count, 107, "After reshuffle, deck wasn't 107 cards")
                 
         guard let discDeck = testDeck1.discardDeck else { return XCTFail("No discardDeck after reshuffle") }
         
-        XCTAssertEqual(discDeck.count, 1, "After reshuffle, discardDeck should have one card")
+        XCTAssertEqual(discDeck.count, 1, "After reshuffle, discardDeck doesn't contain one card")
     }
     
 }

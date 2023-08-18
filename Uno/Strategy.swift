@@ -7,7 +7,28 @@
 
 import Foundation
 
+fileprivate let log = Logger(file:#file).log
+
+enum Tactic {
+    case zingAlways
+    case zingOnOneCard
+    case zingOnTwoCards
+    case zingOnAnyoneOneCard
+    case zingOnAnyoneTwoCards
+    case followColor
+    case followNumber
+}
+
 struct Strategy {
+    var list: [Tactic] = []
+    
+    init(_ strategies : Tactic...) {
+        self.list = strategies
+    }
+    
+    func includes(_ item: Tactic) -> Bool {
+        return list.contains(item)
+    }
     
     func shouldZing() {}
     

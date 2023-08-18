@@ -17,11 +17,20 @@ struct Game {
     
     mutating func play() {
 
-        for name in ["Bluby","Henry","Rachel","Max"] {
-            let player = Player(name: name)
-            self.addPlayer(player)
-        }
-
+        self.addPlayer(Player("Naive 1", Strategy(.followColor)))
+        self.addPlayer(Player("Naive 2", Strategy(.followColor)))
+        self.addPlayer(Player("Naive 3", Strategy(.followColor)))
+        self.addPlayer(Player("Naive 4", Strategy(.followColor)))
+//                self.addPlayer(Player("zingAlways 1", Strategy(.zingAlways)))
+//        self.addPlayer(Player("zingOnOneCard", Strategy(.zingOnOneCard)))
+//        self.addPlayer(Player("zingAlways 2", Strategy(.zingAlways)))
+//        self.addPlayer(Player("zingOnAnyoneOneCard", Strategy(.zingOnAnyoneOneCard)))
+//        self.addPlayer(Player("zingOnAnyoneTwoCards", Strategy(.zingOnAnyoneTwoCards)))
+//        self.addPlayer(Player("Naive 5", Strategy(.followColor)))
+//        self.addPlayer(Player("zingOnOneCard", Strategy(.followColor,.zingOnOneCard)))
+//        self.addPlayer(Player("zingOnTwoCards", Strategy(.followColor,.zingOnTwoCards)))
+//        self.addPlayer(Player("zingAlways", Strategy(.followColor,.zingAlways)))
+        
         for x in 1...1000 {
             log("--- Round #\(x) ---")
             
@@ -32,13 +41,13 @@ struct Game {
             }
             
             for player in players {
-                let player = player
                 thisRound.addPlayer(player)
                 player.newHand()
                 _ = player.drawCards(count:7)
                 log("\(player.description)")
             }
-                        
+            
+            thisRound.chooseRandomStartingPlayer()
             thisRound.play(turns: 1000)
             
             guard let winner = thisRound.winner else {fatalError("Round ended with no winner")}

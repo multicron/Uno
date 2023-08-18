@@ -44,7 +44,7 @@ enum Logger : String {
     }
     
     func shouldLog() -> Bool {
-        return true
+//        return true
         switch self {
         case .Unknown:
             return true

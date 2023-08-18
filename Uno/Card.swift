@@ -55,6 +55,26 @@ enum Card : Equatable, Comparable, CustomStringConvertible {
     }
     
     static func < (card0: Card, card1: Card) -> Bool {
+        return lessThanColorFirst(card0: <#T##Card#>, card1: <#T##Card#>)
+    }
+    
+    static func lessThanNumberFirst (card0: Card, card1: Card) -> Bool {
+        switch (card0,card1) {
+            // Number cards are sorted by number and then color
+        case (.number(let color0, let number0),
+              .number(let color1, let number1)):
+            if (number0 != number1) {
+                return number0 < number1
+            }
+            else {
+                return color0 < color1
+            }
+        default:
+            return lessThanColorFirst(card0:card0, card1:card1)
+        }
+    }
+    
+    static func lessThanColorFirst (card0: Card, card1: Card) -> Bool {
         switch (card0,card1) {
             
         // Number cards are sorted by color and then number
@@ -102,6 +122,24 @@ enum Card : Equatable, Comparable, CustomStringConvertible {
         case (.draw2, .wildDraw4): return true
         case (.wild, .wildDraw4): return true
         default: return false
+        }
+    }
+
+    var isDrawCard : Bool {
+        switch self {
+        case .draw2, .wildDraw4:
+            return true
+        default:
+            return false
+        }
+    }
+
+    var isSkipOrReverseCard : Bool {
+        switch self {
+        case .skip,.reverse:
+            return true
+        default:
+            return false
         }
     }
 

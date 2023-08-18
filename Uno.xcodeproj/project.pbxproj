@@ -16,6 +16,7 @@
 		F07053622A79C30800F8577A /* UnoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07053612A79C30800F8577A /* UnoUITests.swift */; };
 		F07053642A79C30800F8577A /* UnoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07053632A79C30800F8577A /* UnoUITestsLaunchTests.swift */; };
 		F07689832A84037900B8FE2B /* DeckTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07689822A84037900B8FE2B /* DeckTests.swift */; };
+		F076898A2A84BE1200B8FE2B /* UnderstandingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07689892A84BE1200B8FE2B /* UnderstandingTests.swift */; };
 		F08652AE2A7ABB27007A1405 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08652AD2A7ABB27007A1405 /* Player.swift */; };
 		F08652B22A7ABB9D007A1405 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08652B12A7ABB9D007A1405 /* Deck.swift */; };
 		F08652B42A7ABBCA007A1405 /* Hand.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08652B32A7ABBCA007A1405 /* Hand.swift */; };
@@ -90,6 +91,8 @@
 		F07053612A79C30800F8577A /* UnoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnoUITests.swift; sourceTree = "<group>"; };
 		F07053632A79C30800F8577A /* UnoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnoUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		F07689822A84037900B8FE2B /* DeckTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckTests.swift; sourceTree = "<group>"; };
+		F07689842A84546100B8FE2B /* ChatGPTVersion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatGPTVersion.swift; sourceTree = "<group>"; };
+		F07689892A84BE1200B8FE2B /* UnderstandingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderstandingTests.swift; sourceTree = "<group>"; };
 		F08652AD2A7ABB27007A1405 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		F08652AF2A7ABB74007A1405 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		F08652B12A7ABB9D007A1405 /* Deck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
@@ -109,6 +112,7 @@
 		F09746E82A832B19002BD744 /* Uno2.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Uno2.xctestplan; sourceTree = SOURCE_ROOT; };
 		F09746ED2A8330E5002BD744 /* UnoCLITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnoCLITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F09746EF2A8330E5002BD744 /* CardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTests.swift; sourceTree = "<group>"; };
+		F0B63E422A8E80EE00849855 /* Results.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Results.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +150,7 @@
 		F07053362A79C30700F8577A = {
 			isa = PBXGroup;
 			children = (
+				F0B63E422A8E80EE00849855 /* Results.txt */,
 				F09746A52A82F89C002BD744 /* Uno.xctestplan */,
 				F09746E82A832B19002BD744 /* Uno2.xctestplan */,
 				F07053412A79C30700F8577A /* Uno */,
@@ -171,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				F07053422A79C30700F8577A /* UnoApp.swift */,
+				F07689842A84546100B8FE2B /* ChatGPTVersion.swift */,
 				F08652BB2A7C96EB007A1405 /* Round.swift */,
 				F097469C2A81841D002BD744 /* Game.swift */,
 				F09746982A814030002BD744 /* Simulation.swift */,
@@ -226,6 +232,7 @@
 			children = (
 				F09746EF2A8330E5002BD744 /* CardTests.swift */,
 				F07689822A84037900B8FE2B /* DeckTests.swift */,
+				F07689892A84BE1200B8FE2B /* UnderstandingTests.swift */,
 			);
 			path = UnoCLITests;
 			sourceTree = "<group>";
@@ -443,6 +450,7 @@
 				F09746FD2A834651002BD744 /* UnoDocument.swift in Sources */,
 				F09747082A834651002BD744 /* Round.swift in Sources */,
 				F09746FF2A834651002BD744 /* Deck.swift in Sources */,
+				F076898A2A84BE1200B8FE2B /* UnderstandingTests.swift in Sources */,
 				F09746FA2A8339AB002BD744 /* Logger.swift in Sources */,
 				F09747012A834651002BD744 /* GameCounts.swift in Sources */,
 				F09746FE2A834651002BD744 /* RoundCounts.swift in Sources */,

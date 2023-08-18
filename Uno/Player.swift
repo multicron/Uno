@@ -10,18 +10,32 @@ import Foundation
 fileprivate let log = Logger(file:#file).log
 
 class Player : CustomStringConvertible, Hashable {
+    private let strategy : Strategy
     private var round: Round? = nil
     let name: String
     private(set) var score: Int = 0
     var hand: Hand = Hand()
+    var count: Int {return self.hand.count}
+    
+
     var description: String {
         return "Player Name: \(name) Score: \(score) Hand: \(hand.description)"
     }
     
-    init(name: String) {
+    init(_ name: String, _ strategy: Strategy) {
         self.name = name
+        self.strategy = strategy
     }
     
+    func otherPlayers() -> [Player] {
+        if let round = self.round {
+            return round.players.filter {$0 != self}
+        }
+        else {
+            return []
+        }
+    }
+
     func setRound(_ round: Round) {
         self.round = round
     }
@@ -58,19 +72,17 @@ class Player : CustomStringConvertible, Hashable {
         return drawn
     }
     
-    func playOneTurn(turnIsSkipped: Bool, penaltiesToDraw: Int) -> TurnHistoryItem {
+    func playOneTurn(turnIsSkipped: Bool, penaltiesToDraw: Int, players: [Player]) -> TurnHistoryItem {
         
         guard let round = self.round else {fatalError("No round defined")}
         
         var turn = TurnHistoryItem()
-        
-        log("\(self.name): ")
-        
-        log(hand)
-        
+                
         let topCardOfDiscardDeck = round.discardDeck.topCard()
         
         log("Top Card: ","\"",topCardOfDiscardDeck.description,"\"")
+
+        log("\(self.name): ",hand)
         
         if (turnIsSkipped) {
             log("skipped")
@@ -83,11 +95,7 @@ class Player : CustomStringConvertible, Hashable {
             turn.cardsDrawn = drawn
         }
         else {
-            let playableCards = Hand.sortCards(hand.playableCards(on: topCardOfDiscardDeck))
-            log("Playable Cards: ",playableCards.map{$0.description})
-            
-            if !playableCards.isEmpty {
-                var cardToPlay = playableCards[0]
+            if var cardToPlay = pickCard(on: topCardOfDiscardDeck) {
                 playCard(card: &cardToPlay)
                 turn.cardPlayed = cardToPlay
             }
@@ -107,6 +115,77 @@ class Player : CustomStringConvertible, Hashable {
         return turn
     }
     
+    func pickCard(on topCardOfDiscardDeck: Card) -> Card? {
+        
+        guard let round = self.round else {
+            return nil
+        }
+        
+        let playableCards = Hand.sortCards(hand.playableCards(on: topCardOfDiscardDeck))
+        log("Playable Cards: ",playableCards.map{$0.description})
+        
+        if playableCards.isEmpty {
+            return nil
+        }
+        
+        guard let playerWithFewestCards = otherPlayers().min(by: {$0.count < $1.count}) else {
+            fatalError("Can't calculate playerWithFewestCards")
+        }
+        
+        let smallestHandCount = playerWithFewestCards.count
+        log("Minimum Hands of Other Players:", smallestHandCount)
+        
+        let minNext = round.nextPlayer().count
+        
+        log("Next player has \(minNext) cards")
+
+        let drawCards = playableCards.filter {$0.isDrawCard}
+        let skipCards = playableCards.filter {$0.isSkipOrReverseCard}
+        
+        if strategy.includes(.zingAlways) {
+            switch true {
+            case !drawCards.isEmpty: return drawCards[0]
+            case !skipCards.isEmpty: return skipCards[0]
+            default: break
+            }
+        }
+
+        if strategy.includes(.zingOnAnyoneOneCard) && smallestHandCount == 1 {
+            switch true {
+            case !drawCards.isEmpty: return drawCards[0]
+            case !skipCards.isEmpty: return skipCards[0]
+            default: break
+            }
+        }
+
+        if strategy.includes(.zingOnAnyoneTwoCards) && smallestHandCount == 2 {
+            switch true {
+            case !drawCards.isEmpty: return drawCards[0]
+            case !skipCards.isEmpty: return skipCards[0]
+            default: break
+            }
+        }
+
+        if (minNext == 1 && strategy.includes(.zingOnOneCard)) {
+            switch true {
+            case !drawCards.isEmpty: return drawCards[0]
+            case !skipCards.isEmpty: return skipCards[0]
+            default: break
+            }
+        }
+
+        else if (minNext == 2 && strategy.includes(.zingOnTwoCards)) {
+            switch true {
+            case !drawCards.isEmpty: return drawCards[0]
+            case !skipCards.isEmpty: return skipCards[0]
+            default: break
+            }
+        }
+
+    return playableCards[0]
+
+    }
+
     func playCard(card: inout Card) {
         guard let round = self.round else {fatalError("No round defined")}
 

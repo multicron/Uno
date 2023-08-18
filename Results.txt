@@ -1,0 +1,3 @@
+Simulation: Game Counts: zingAlways won 371; zingOnOneCard won 250; zingOnTwoCards won 219; Naive won 160
+Simulation: Game Counts: zingAlways won 382; zingOnOneCard won 268; zingOnTwoCards won 194; Naive won 156
+Simulation: Game Counts: zingAlways won 381; zingOnOneCard won 260; zingOnTwoCards won 203; Naive won 156
