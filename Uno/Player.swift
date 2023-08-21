@@ -10,6 +10,7 @@ import Foundation
 fileprivate let log = Logger(file:#file).log
 
 class Player : CustomStringConvertible, Hashable {
+    private let uuid = UUID().uuidString
     private let strategy : Strategy
     private var round: Round? = nil
     var name: String
@@ -22,10 +23,12 @@ class Player : CustomStringConvertible, Hashable {
         return "Player Name: \(name) Score: \(score) Hand: \(hand.description)"
     }
     
-    init(_ name: String, _ strategy: Strategy) {
-        self.name = name
+    init(_ strategy: Strategy) {
         self.strategy = strategy
         self.name = strategy.description
+    }
+    func resetScore() {
+        score = 0
     }
     
     func otherPlayers() -> [Player] {
@@ -42,11 +45,11 @@ class Player : CustomStringConvertible, Hashable {
     }
     
     func hash(into hasher: inout Hasher) {
-        hasher.combine(name)
+        hasher.combine(uuid)
     }
     
     static func ==(player1:Player, player2:Player) -> Bool {
-        return player1.name == player2.name
+        return player1.uuid == player2.uuid
     }
     
     func hasWon() -> Bool {
