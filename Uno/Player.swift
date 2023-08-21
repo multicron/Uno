@@ -12,7 +12,7 @@ fileprivate let log = Logger(file:#file).log
 class Player : CustomStringConvertible, Hashable {
     private let strategy : Strategy
     private var round: Round? = nil
-    let name: String
+    var name: String
     private(set) var score: Int = 0
     var hand: Hand = Hand()
     var count: Int {return self.hand.count}
@@ -25,6 +25,7 @@ class Player : CustomStringConvertible, Hashable {
     init(_ name: String, _ strategy: Strategy) {
         self.name = name
         self.strategy = strategy
+        self.name = strategy.description
     }
     
     func otherPlayers() -> [Player] {
@@ -122,7 +123,7 @@ class Player : CustomStringConvertible, Hashable {
         }
         
         let playableCards: [Card]
-        
+                
         if strategy.includes(.followColor) {
             playableCards = Hand.sortedCards(hand.playableCards(on: topCardOfDiscardDeck))
         }
@@ -134,6 +135,10 @@ class Player : CustomStringConvertible, Hashable {
         
         if playableCards.isEmpty {
             return nil
+        }
+        
+        if strategy.includes(.playRandomCard) {
+            return playableCards.randomElement()
         }
         
         guard let playerWithFewestCards = otherPlayers().min(by: {$0.count < $1.count}) else {

@@ -53,6 +53,9 @@ class Round : CustomStringConvertible {
     }
     
     func addPlayer(_ player: Player) {
+        while (players.contains(player)) {
+            player.name += "+"
+        }
         players.append(player)
         player.setRound(self)
     }

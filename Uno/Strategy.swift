@@ -9,16 +9,17 @@ import Foundation
 
 fileprivate let log = Logger(file:#file).log
 
-enum Tactic : CustomStringConvertible {
-    case zingAlways
-    case zingOnOneCard
-    case zingOnTwoCards
-    case zingOnAnyoneOneCard
-    case zingOnAnyoneTwoCards
-    case followColor
-    case followNumber
+enum Tactic : String, CustomStringConvertible {
+    case zingAlways = "zingAlways"
+    case zingOnOneCard = "zingOnOneCard"
+    case zingOnTwoCards = "zingOnTwoCards"
+    case zingOnAnyoneOneCard = "zingOnAnyoneOneCard"
+    case zingOnAnyoneTwoCards = "zingOnAnyoneTwoCards"
+    case followColor = "followColor"
+    case followNumber = "followNumber"
+    case playRandomCard = "playRandomCard"
     
-    var description: String { String(reflecting: self) }
+    var description: String { self.rawValue }
 }
 
 struct Strategy {
