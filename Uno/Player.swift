@@ -202,13 +202,19 @@ class Player : CustomStringConvertible, Hashable {
 
     }
 
+    func bestColor() -> Color {
+        guard let bestColor = self.hand.bestColor() else {
+            return Card.allColors.randomElement()!
+        }
+        return bestColor
+    }
+    
     func playCard(card: inout Card) {
         guard let round = self.round else {fatalError("No round defined")}
 
         let _ = hand.removeCard(card)
         
-        let bestColor = self.hand.bestColor()
-        card.setColorIfWildcard(color: bestColor ?? Color.red)
+        card.setColorIfWildcard(color: self.bestColor())
         
         log("Playing ","\"",card.description,"\"")
         

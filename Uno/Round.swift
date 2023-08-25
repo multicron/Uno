@@ -32,16 +32,8 @@ class Round : CustomStringConvertible {
         drawDeck.addStandardDeck()
         drawDeck.shuffle()
         drawDeck.addDiscardDeck(deck: discardDeck)
-
-
+        
         log(self)
-
-        while case .wildDraw4(color:nil) = drawDeck.topCard() {
-            log("Top card is a Wild+4, reshuffling Draw Deck")
-            drawDeck.shuffle()
-            }
-                
-        discardDeck.addCard(drawDeck.drawCard())
     }
 
     var winner : Player? {
@@ -53,9 +45,6 @@ class Round : CustomStringConvertible {
     }
     
     func addPlayer(_ player: Player) {
-        while (players.contains(player)) {
-            player.name += "+"
-        }
         players.append(player)
         player.setRound(self)
     }
@@ -78,18 +67,20 @@ class Round : CustomStringConvertible {
             penaltyDrawsNextPlayer = 2
         case .wildDraw4:
             penaltyDrawsNextPlayer = 4
-        default:
+        case .number:
             skipNextPlayer = false
             penaltyDrawsNextPlayer = 0
+        case .wild:
+            break
         }
     }
     
-    func handleInitialWildcard(_ card: Card, player: Player) {
+    func handleInitialWildcard(_ card: inout Card, player: Player) {
         switch card {
         case .wildDraw4(color: _):
-            assertionFailure("Card on top of discard deck at start of play is \(card)")
+            assertionFailure("Card on top of discard deck at start of round is \(card)")
         case .wild:
-            // TODO: Make the first player choose the color
+            card.setColorIfWildcard(color: player.bestColor())
             break
         default:
             break
@@ -117,13 +108,23 @@ class Round : CustomStringConvertible {
         //
         // If it is a "Wild", they get to choose the first color
         //
-        // It cannot be "Wild+4" because the initial drawDeck is shuffled
+        // If it is "Wild+4" the drawDeck is shuffled
         // until the top card isn't "Wild+4"
         
-        log("First card in game: \(discardDeck.topCard())")
-        handleActionCard(discardDeck.topCard())
-        handleInitialWildcard(discardDeck.topCard(),player: players[0])
+        while case .wildDraw4(color:nil) = drawDeck.topCard() {
+            log(drawDeck)
+            log("Top card is a Wild+4, reshuffling Draw Deck")
+            drawDeck.shuffle()
+        }
+
+        var firstCard = drawDeck.drawCard()
+                
+        log("First card in game: \(firstCard)")
+        handleActionCard(firstCard)
+        handleInitialWildcard(&firstCard,player: players[0])
         
+        discardDeck.addCard(firstCard)
+
         for turnNumber in 1...turns {
             log_turns("--- Turn # \(turnNumber) ---")
             
