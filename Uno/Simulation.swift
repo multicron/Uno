@@ -10,21 +10,26 @@ import Foundation
 fileprivate let log = Logger(file:#file).log
 
 @main
-
 struct Simulation {
     var gameCounter : GameCounts = GameCounts()
     var players : [Player] = []
     
     static func main() {
         var sim = Simulation()
-        sim.run()
+        Task {
+            let result = await sim.run()
+            result.forEach {game in
+                log("Game \(game.number) \(game.players.map {$0.name+" "+String($0.score)+";"})")
+            }
+        }
+        dispatchMain()
     }
     
     mutating func addPlayer(_ player: Player) {
         players.append(player)
     }
-    
-    mutating func run() {
+
+    mutating func run() async -> [Game] {
         self.addPlayer(Player(Strategy(.followColor)))
         self.addPlayer(Player(Strategy(.followNumber)))
         self.addPlayer(Player(Strategy(.followColor)))
@@ -41,49 +46,41 @@ struct Simulation {
         //        self.addPlayer(Player("zingOnOneCard", Strategy(.followColor,.zingOnOneCard)))
         //        self.addPlayer(Player("zingOnTwoCards", Strategy(.followColor,.zingOnTwoCards)))
         //        self.addPlayer(Player("zingAlways", Strategy(.followColor,.zingAlways)))
+                
+
+        var result = [Game]()
         
-        Task {
-            await withTaskGroup(of: Game.self) { group in
-                var result = [Game]()
+        await withTaskGroup(of: Game.self) { group in
+            
+            for x in (1...1000) {
+                let game = Game(number: x, winningScore: 500);
                 
-                for x in (1...1000) {
-                    let game = Game(number: x, winningScore: 500);
-                    
-                    
-                    game.addPlayer(Player(Strategy(.followNumber)))
-                    game.addPlayer(Player(Strategy(.followNumber)))
-                    game.addPlayer(Player(Strategy(.followNumber)))
-                    game.addPlayer(Player(Strategy(.followNumber)))
-                    
-                    //                    players.forEach {player in
-                    ////                        player.resetScore()
-                    ////                        game.addPlayer(player)
-                    //                    }
-                    
-                    group.addTask {
-//                        sleep(UInt32.random(in:0...5))
-                        return await game.play()
-                    }
+                
+                game.addPlayer(Player(Strategy(.zingAlways)))
+                game.addPlayer(Player(Strategy(.zingAlways)))
+                game.addPlayer(Player(Strategy(.zingAlways)))
+                game.addPlayer(Player(Strategy(.zingAlways)))
+                
+                //                    players.forEach {player in
+                ////                        player.resetScore()
+                ////                        game.addPlayer(player)
+                //                    }
+                
+                group.addTask {
+                    log("Game \(x)")
+                    return await game.play()
                 }
-                
-                for await game in group {
-                    print("Game \(game.number) \(game.players.map {$0.name+" "+String($0.score)+";"})")
-                    result.append(game)
-                }
-                
             }
-        }
-        sleep(1000000)
-    }
-    
-    func runOneGame(_ game: Game) async -> Player {
-        //            log(game)
-        _ = await game.play()
-        //                gameCounter.countGame(game:game)
-        //                log(gameCounter)
-        //            log(game)
-        return game.winner!
+            
+            for await game in group {
+                result.append(game)
+            }
+            
+            print("Done with tasks")
+        } // TaskGroup
+        print(result.map {$0.winner})
         
-    }
-    
+        return result
+        
+    } // run
 }

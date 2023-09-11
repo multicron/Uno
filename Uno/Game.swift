@@ -59,7 +59,7 @@ class Game {
         thisRound.chooseRandomStartingPlayer()
         thisRound.play(turns: 1000)
         
-        guard var roundWinner = thisRound.winner else {fatalError("Round ended with no winner")}
+        guard let roundWinner = thisRound.winner else {fatalError("Round ended with no winner")}
         
         log("Round \(x) won by \(roundWinner.name) with a score of \(thisRound.score).")
         
