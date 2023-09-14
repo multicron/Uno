@@ -8,7 +8,7 @@
 import Foundation
 
 struct CardCounts : CustomStringConvertible {
-    var colors: [Color:Int] = Card.zeroedCardColorCounts
+    var colors: [CardColor:Int] = Card.zeroedCardColorCounts
     var players: [Player] = []
     
     var description: String {

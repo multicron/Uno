@@ -9,35 +9,29 @@ import Foundation
 
 fileprivate let log = Logger(file:#file).log
 
-enum Color: String, Comparable {
-    case red = "Red"
-    case green = "Green"
-    case blue = "Blue"
-    case yellow = "Yellow"
+enum Card : Equatable, Comparable, CustomStringConvertible, Hashable, Identifiable {
     
-    static func < (color1:Color, color2:Color) -> Bool {
-        return color1.rawValue < color2.rawValue
-    }
-}
+    case number(color:CardColor,number: Int)
+    case draw2(color:CardColor)
+    case skip(color:CardColor)
+    case reverse(color:CardColor)
+    case wild(color:CardColor?)
+    case wildDraw4(color:CardColor?)
 
-enum Card : Equatable, Comparable, CustomStringConvertible {
-    case number(color:Color,number: Int)
-    case draw2(color:Color)
-    case skip(color:Color)
-    case reverse(color:Color)
-    case wild(color:Color?)
-    case wildDraw4(color:Color?)
-
-    static let allColors : [Color] = [.blue,.green,.red,.yellow]
+    static let allColors : [CardColor] = [.blue,.green,.red,.yellow]
     static let allNumbers : [Int] = [0,1,2,3,4,5,6,7,8,9]
     
-    static var zeroedCardColorCounts: [Color:Int] {
-        var counts: [Color:Int] = [:]
+    var id: Self {
+            return self
+        }
+    
+    static var zeroedCardColorCounts: [CardColor:Int] {
+        var counts: [CardColor:Int] = [:]
         allColors.forEach {color in counts[color] = 0}
         return counts
     }
 
-    static func compareWildCards (color0: Color?, color1: Color?) -> Bool {
+    static func compareWildCards (color0: CardColor?, color1: CardColor?) -> Bool {
         // Returns true for "<", false for ">="
         
         // No color assigned is sorted less than color assigned
@@ -150,7 +144,7 @@ enum Card : Equatable, Comparable, CustomStringConvertible {
         }
     }
     
-    var color: Color? {
+    var color: CardColor? {
         switch self {
         case .number(let color, _): return color
         case .draw2(let color): return color
@@ -180,7 +174,7 @@ enum Card : Equatable, Comparable, CustomStringConvertible {
         }
     }
     
-    mutating func setColorIfWildcard(color:Color) {
+    mutating func setColorIfWildcard(color:CardColor) {
         switch self {
         case .wild: self = .wild(color:color)
         case .wildDraw4: self = .wildDraw4(color: color)

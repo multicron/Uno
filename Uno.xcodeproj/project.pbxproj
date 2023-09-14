@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F00C5EA52AB3AA8300A97EF0 /* CardoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00C5EA42AB3AA8300A97EF0 /* CardoApp.swift */; };
+		F00C5EA72AB3AA8300A97EF0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00C5EA62AB3AA8300A97EF0 /* ContentView.swift */; };
+		F00C5EA92AB3AA8600A97EF0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F00C5EA82AB3AA8600A97EF0 /* Assets.xcassets */; };
+		F00C5EAC2AB3AA8600A97EF0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F00C5EAB2AB3AA8600A97EF0 /* Preview Assets.xcassets */; };
+		F00C5EB62AB3AA8600A97EF0 /* CardoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00C5EB52AB3AA8600A97EF0 /* CardoTests.swift */; };
+		F00C5EC02AB3AA8600A97EF0 /* CardoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00C5EBF2AB3AA8600A97EF0 /* CardoUITests.swift */; };
+		F00C5EC22AB3AA8600A97EF0 /* CardoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00C5EC12AB3AA8600A97EF0 /* CardoUITestsLaunchTests.swift */; };
+		F00C5ECC2AB3AB4000A97EF0 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00C5E9C2AB3AA0500A97EF0 /* CardView.swift */; };
 		F07053432A79C30700F8577A /* UnoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07053422A79C30700F8577A /* UnoApp.swift */; };
 		F07053452A79C30700F8577A /* UnoDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07053442A79C30700F8577A /* UnoDocument.swift */; };
 		F07053472A79C30700F8577A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07053462A79C30700F8577A /* ContentView.swift */; };
@@ -50,9 +58,35 @@
 		F09747072A834651002BD744 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07053462A79C30700F8577A /* ContentView.swift */; };
 		F09747082A834651002BD744 /* Round.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08652BB2A7C96EB007A1405 /* Round.swift */; };
 		F09747092A834651002BD744 /* CardCounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08652B72A7AEBAF007A1405 /* CardCounts.swift */; };
+		F0EE08A22AB3AC61009AA53C /* CardColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EE08A12AB3AC61009AA53C /* CardColor.swift */; };
+		F0EE08A32AB3AC62009AA53C /* CardColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EE08A12AB3AC61009AA53C /* CardColor.swift */; };
+		F0EE08A42AB3AD73009AA53C /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08652AF2A7ABB74007A1405 /* Card.swift */; };
+		F0EE08A52AB3AD7C009AA53C /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08652B52A7AC15B007A1405 /* Logger.swift */; };
+		F0EE08A72AB3B210009AA53C /* NumberCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EE08A62AB3B210009AA53C /* NumberCardView.swift */; };
+		F0EE08A82AB3B210009AA53C /* NumberCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EE08A62AB3B210009AA53C /* NumberCardView.swift */; };
+		F0EE08AA2AB3B63B009AA53C /* SpecialCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EE08A92AB3B63B009AA53C /* SpecialCardView.swift */; };
+		F0EE08AB2AB3B63B009AA53C /* SpecialCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EE08A92AB3B63B009AA53C /* SpecialCardView.swift */; };
+		F0EE08AD2AB3BD5A009AA53C /* HandView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EE08AC2AB3BD5A009AA53C /* HandView.swift */; };
+		F0EE08AE2AB3BD5A009AA53C /* HandView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EE08AC2AB3BD5A009AA53C /* HandView.swift */; };
+		F0EE08AF2AB3BD8E009AA53C /* Hand.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08652B32A7ABBCA007A1405 /* Hand.swift */; };
+		F0EE08B02AB3BDD1009AA53C /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08652B12A7ABB9D007A1405 /* Deck.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		F00C5EB22AB3AA8600A97EF0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F07053372A79C30700F8577A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F00C5EA12AB3AA8300A97EF0;
+			remoteInfo = Cardo;
+		};
+		F00C5EBC2AB3AA8600A97EF0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F07053372A79C30700F8577A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F00C5EA12AB3AA8300A97EF0;
+			remoteInfo = Cardo;
+		};
 		F07053542A79C30800F8577A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F07053372A79C30700F8577A /* Project object */;
@@ -77,6 +111,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F00C5E9C2AB3AA0500A97EF0 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		F00C5EA22AB3AA8300A97EF0 /* Cardo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cardo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F00C5EA42AB3AA8300A97EF0 /* CardoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardoApp.swift; sourceTree = "<group>"; };
+		F00C5EA62AB3AA8300A97EF0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F00C5EA82AB3AA8600A97EF0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F00C5EAB2AB3AA8600A97EF0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F00C5EB12AB3AA8600A97EF0 /* CardoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CardoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F00C5EB52AB3AA8600A97EF0 /* CardoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardoTests.swift; sourceTree = "<group>"; };
+		F00C5EBB2AB3AA8600A97EF0 /* CardoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CardoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F00C5EBF2AB3AA8600A97EF0 /* CardoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardoUITests.swift; sourceTree = "<group>"; };
+		F00C5EC12AB3AA8600A97EF0 /* CardoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardoUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		F070533F2A79C30700F8577A /* Uno.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Uno.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F07053422A79C30700F8577A /* UnoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnoApp.swift; sourceTree = "<group>"; };
 		F07053442A79C30700F8577A /* UnoDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnoDocument.swift; sourceTree = "<group>"; };
@@ -113,9 +158,34 @@
 		F09746ED2A8330E5002BD744 /* UnoCLITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnoCLITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F09746EF2A8330E5002BD744 /* CardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTests.swift; sourceTree = "<group>"; };
 		F0B63E422A8E80EE00849855 /* Results.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Results.txt; sourceTree = "<group>"; };
+		F0EE08A12AB3AC61009AA53C /* CardColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardColor.swift; sourceTree = "<group>"; };
+		F0EE08A62AB3B210009AA53C /* NumberCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberCardView.swift; sourceTree = "<group>"; };
+		F0EE08A92AB3B63B009AA53C /* SpecialCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialCardView.swift; sourceTree = "<group>"; };
+		F0EE08AC2AB3BD5A009AA53C /* HandView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		F00C5E9F2AB3AA8300A97EF0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F00C5EAE2AB3AA8600A97EF0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F00C5EB82AB3AA8600A97EF0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F070533C2A79C30700F8577A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -147,16 +217,67 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F00C5E9B2AB3A9CE00A97EF0 /* UnoUI */ = {
+			isa = PBXGroup;
+			children = (
+				F00C5E9C2AB3AA0500A97EF0 /* CardView.swift */,
+				F0EE08AC2AB3BD5A009AA53C /* HandView.swift */,
+				F0EE08A62AB3B210009AA53C /* NumberCardView.swift */,
+			);
+			path = UnoUI;
+			sourceTree = "<group>";
+		};
+		F00C5EA32AB3AA8300A97EF0 /* Cardo */ = {
+			isa = PBXGroup;
+			children = (
+				F00C5EA42AB3AA8300A97EF0 /* CardoApp.swift */,
+				F00C5EA62AB3AA8300A97EF0 /* ContentView.swift */,
+				F00C5EA82AB3AA8600A97EF0 /* Assets.xcassets */,
+				F00C5EAA2AB3AA8600A97EF0 /* Preview Content */,
+			);
+			path = Cardo;
+			sourceTree = "<group>";
+		};
+		F00C5EAA2AB3AA8600A97EF0 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				F00C5EAB2AB3AA8600A97EF0 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F00C5EB42AB3AA8600A97EF0 /* CardoTests */ = {
+			isa = PBXGroup;
+			children = (
+				F00C5EB52AB3AA8600A97EF0 /* CardoTests.swift */,
+			);
+			path = CardoTests;
+			sourceTree = "<group>";
+		};
+		F00C5EBE2AB3AA8600A97EF0 /* CardoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F00C5EBF2AB3AA8600A97EF0 /* CardoUITests.swift */,
+				F00C5EC12AB3AA8600A97EF0 /* CardoUITestsLaunchTests.swift */,
+			);
+			path = CardoUITests;
+			sourceTree = "<group>";
+		};
 		F07053362A79C30700F8577A = {
 			isa = PBXGroup;
 			children = (
+				F0EE08A92AB3B63B009AA53C /* SpecialCardView.swift */,
 				F0B63E422A8E80EE00849855 /* Results.txt */,
 				F09746A52A82F89C002BD744 /* Uno.xctestplan */,
 				F09746E82A832B19002BD744 /* Uno2.xctestplan */,
+				F00C5E9B2AB3A9CE00A97EF0 /* UnoUI */,
 				F07053412A79C30700F8577A /* Uno */,
 				F07053562A79C30800F8577A /* UnoTests */,
 				F07053602A79C30800F8577A /* UnoUITests */,
 				F09746EE2A8330E5002BD744 /* UnoCLITests */,
+				F00C5EA32AB3AA8300A97EF0 /* Cardo */,
+				F00C5EB42AB3AA8600A97EF0 /* CardoTests */,
+				F00C5EBE2AB3AA8600A97EF0 /* CardoUITests */,
 				F07053402A79C30700F8577A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -168,6 +289,9 @@
 				F07053532A79C30800F8577A /* UnoTests.xctest */,
 				F070535D2A79C30800F8577A /* UnoUITests.xctest */,
 				F09746ED2A8330E5002BD744 /* UnoCLITests.xctest */,
+				F00C5EA22AB3AA8300A97EF0 /* Cardo.app */,
+				F00C5EB12AB3AA8600A97EF0 /* CardoTests.xctest */,
+				F00C5EBB2AB3AA8600A97EF0 /* CardoUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -179,6 +303,7 @@
 				F070534E2A79C30800F8577A /* Uno.entitlements */,
 				F070534D2A79C30800F8577A /* Info.plist */,
 				F08652AF2A7ABB74007A1405 /* Card.swift */,
+				F0EE08A12AB3AC61009AA53C /* CardColor.swift */,
 				F08652B72A7AEBAF007A1405 /* CardCounts.swift */,
 				F07689842A84546100B8FE2B /* ChatGPTVersion.swift */,
 				F07053462A79C30700F8577A /* ContentView.swift */,
@@ -240,6 +365,59 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		F00C5EA12AB3AA8300A97EF0 /* Cardo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F00C5EC32AB3AA8600A97EF0 /* Build configuration list for PBXNativeTarget "Cardo" */;
+			buildPhases = (
+				F00C5E9E2AB3AA8300A97EF0 /* Sources */,
+				F00C5E9F2AB3AA8300A97EF0 /* Frameworks */,
+				F00C5EA02AB3AA8300A97EF0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Cardo;
+			productName = Cardo;
+			productReference = F00C5EA22AB3AA8300A97EF0 /* Cardo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F00C5EB02AB3AA8600A97EF0 /* CardoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F00C5EC62AB3AA8600A97EF0 /* Build configuration list for PBXNativeTarget "CardoTests" */;
+			buildPhases = (
+				F00C5EAD2AB3AA8600A97EF0 /* Sources */,
+				F00C5EAE2AB3AA8600A97EF0 /* Frameworks */,
+				F00C5EAF2AB3AA8600A97EF0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F00C5EB32AB3AA8600A97EF0 /* PBXTargetDependency */,
+			);
+			name = CardoTests;
+			productName = CardoTests;
+			productReference = F00C5EB12AB3AA8600A97EF0 /* CardoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F00C5EBA2AB3AA8600A97EF0 /* CardoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F00C5EC92AB3AA8600A97EF0 /* Build configuration list for PBXNativeTarget "CardoUITests" */;
+			buildPhases = (
+				F00C5EB72AB3AA8600A97EF0 /* Sources */,
+				F00C5EB82AB3AA8600A97EF0 /* Frameworks */,
+				F00C5EB92AB3AA8600A97EF0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F00C5EBD2AB3AA8600A97EF0 /* PBXTargetDependency */,
+			);
+			name = CardoUITests;
+			productName = CardoUITests;
+			productReference = F00C5EBB2AB3AA8600A97EF0 /* CardoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		F070533E2A79C30700F8577A /* Uno */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F07053672A79C30800F8577A /* Build configuration list for PBXNativeTarget "Uno" */;
@@ -321,6 +499,17 @@
 				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
+					F00C5EA12AB3AA8300A97EF0 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+					F00C5EB02AB3AA8600A97EF0 = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = F00C5EA12AB3AA8300A97EF0;
+					};
+					F00C5EBA2AB3AA8600A97EF0 = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = F00C5EA12AB3AA8300A97EF0;
+					};
 					F070533E2A79C30700F8577A = {
 						CreatedOnToolsVersion = 15.0;
 					};
@@ -354,11 +543,37 @@
 				F07053522A79C30800F8577A /* UnoTests */,
 				F070535C2A79C30800F8577A /* UnoUITests */,
 				F09746EC2A8330E5002BD744 /* UnoCLITests */,
+				F00C5EA12AB3AA8300A97EF0 /* Cardo */,
+				F00C5EB02AB3AA8600A97EF0 /* CardoTests */,
+				F00C5EBA2AB3AA8600A97EF0 /* CardoUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		F00C5EA02AB3AA8300A97EF0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F00C5EAC2AB3AA8600A97EF0 /* Preview Assets.xcassets in Resources */,
+				F00C5EA92AB3AA8600A97EF0 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F00C5EAF2AB3AA8600A97EF0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F00C5EB92AB3AA8600A97EF0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F070533D2A79C30700F8577A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -392,10 +607,46 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		F00C5E9E2AB3AA8300A97EF0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F00C5EA72AB3AA8300A97EF0 /* ContentView.swift in Sources */,
+				F0EE08A52AB3AD7C009AA53C /* Logger.swift in Sources */,
+				F00C5ECC2AB3AB4000A97EF0 /* CardView.swift in Sources */,
+				F0EE08AE2AB3BD5A009AA53C /* HandView.swift in Sources */,
+				F0EE08A82AB3B210009AA53C /* NumberCardView.swift in Sources */,
+				F0EE08A42AB3AD73009AA53C /* Card.swift in Sources */,
+				F0EE08AF2AB3BD8E009AA53C /* Hand.swift in Sources */,
+				F00C5EA52AB3AA8300A97EF0 /* CardoApp.swift in Sources */,
+				F0EE08AB2AB3B63B009AA53C /* SpecialCardView.swift in Sources */,
+				F0EE08B02AB3BDD1009AA53C /* Deck.swift in Sources */,
+				F0EE08A32AB3AC62009AA53C /* CardColor.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F00C5EAD2AB3AA8600A97EF0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F00C5EB62AB3AA8600A97EF0 /* CardoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F00C5EB72AB3AA8600A97EF0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F00C5EC22AB3AA8600A97EF0 /* CardoUITestsLaunchTests.swift in Sources */,
+				F00C5EC02AB3AA8600A97EF0 /* CardoUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F070533B2A79C30700F8577A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0EE08AD2AB3BD5A009AA53C /* HandView.swift in Sources */,
 				F08652B22A7ABB9D007A1405 /* Deck.swift in Sources */,
 				F08652B82A7AEBAF007A1405 /* CardCounts.swift in Sources */,
 				F08652AE2A7ABB27007A1405 /* Player.swift in Sources */,
@@ -403,13 +654,16 @@
 				F08652BA2A7C93C7007A1405 /* RoundHistoryItem.swift in Sources */,
 				F09746A22A82D787002BD744 /* GameCounts.swift in Sources */,
 				F09746F62A83350F002BD744 /* Card.swift in Sources */,
+				F0EE08A22AB3AC61009AA53C /* CardColor.swift in Sources */,
 				F08652BC2A7C96EB007A1405 /* Round.swift in Sources */,
 				F08652B42A7ABBCA007A1405 /* Hand.swift in Sources */,
 				F08652BE2A7C9755007A1405 /* Strategy.swift in Sources */,
 				F08652C02A7C9C63007A1405 /* TurnHistoryItem.swift in Sources */,
 				F09746992A814030002BD744 /* Simulation.swift in Sources */,
 				F07053452A79C30700F8577A /* UnoDocument.swift in Sources */,
+				F0EE08AA2AB3B63B009AA53C /* SpecialCardView.swift in Sources */,
 				F097469B2A814BE4002BD744 /* RoundCounts.swift in Sources */,
+				F0EE08A72AB3B210009AA53C /* NumberCardView.swift in Sources */,
 				F07053472A79C30700F8577A /* ContentView.swift in Sources */,
 				F08652B62A7AC15B007A1405 /* Logger.swift in Sources */,
 				F097469D2A81841D002BD744 /* Game.swift in Sources */,
@@ -464,6 +718,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		F00C5EB32AB3AA8600A97EF0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F00C5EA12AB3AA8300A97EF0 /* Cardo */;
+			targetProxy = F00C5EB22AB3AA8600A97EF0 /* PBXContainerItemProxy */;
+		};
+		F00C5EBD2AB3AA8600A97EF0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F00C5EA12AB3AA8300A97EF0 /* Cardo */;
+			targetProxy = F00C5EBC2AB3AA8600A97EF0 /* PBXContainerItemProxy */;
+		};
 		F07053552A79C30800F8577A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = F070533E2A79C30700F8577A /* Uno */;
@@ -482,6 +746,153 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		F00C5EC42AB3AA8600A97EF0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Cardo/Preview Content\"";
+				DEVELOPMENT_TEAM = LZ3UTU8883;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = art.xrvision.Cardo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F00C5EC52AB3AA8600A97EF0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Cardo/Preview Content\"";
+				DEVELOPMENT_TEAM = LZ3UTU8883;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = art.xrvision.Cardo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F00C5EC72AB3AA8600A97EF0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LZ3UTU8883;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = art.xrvision.CardoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cardo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Cardo";
+			};
+			name = Debug;
+		};
+		F00C5EC82AB3AA8600A97EF0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LZ3UTU8883;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = art.xrvision.CardoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cardo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Cardo";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F00C5ECA2AB3AA8600A97EF0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LZ3UTU8883;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = art.xrvision.CardoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Cardo;
+			};
+			name = Debug;
+		};
+		F00C5ECB2AB3AA8600A97EF0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LZ3UTU8883;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = art.xrvision.CardoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Cardo;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		F07053652A79C30800F8577A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -763,6 +1174,33 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		F00C5EC32AB3AA8600A97EF0 /* Build configuration list for PBXNativeTarget "Cardo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F00C5EC42AB3AA8600A97EF0 /* Debug */,
+				F00C5EC52AB3AA8600A97EF0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F00C5EC62AB3AA8600A97EF0 /* Build configuration list for PBXNativeTarget "CardoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F00C5EC72AB3AA8600A97EF0 /* Debug */,
+				F00C5EC82AB3AA8600A97EF0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F00C5EC92AB3AA8600A97EF0 /* Build configuration list for PBXNativeTarget "CardoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F00C5ECA2AB3AA8600A97EF0 /* Debug */,
+				F00C5ECB2AB3AA8600A97EF0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		F070533A2A79C30700F8577A /* Build configuration list for PBXProject "Uno" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

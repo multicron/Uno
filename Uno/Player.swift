@@ -202,7 +202,7 @@ class Player : CustomStringConvertible, Hashable {
 
     }
 
-    func bestColor() -> Color {
+    func bestColor() -> CardColor {
         guard let bestColor = self.hand.bestColor() else {
             return Card.allColors.randomElement()!
         }

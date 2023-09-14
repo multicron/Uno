@@ -46,7 +46,7 @@ class Hand : Deck {
         }
     }
     
-    func countColors() -> [Color:Int] {
+    func countColors() -> [CardColor:Int] {
         var colorCounts = Card.zeroedCardColorCounts
 
           self.cards.forEach { card in
@@ -57,7 +57,7 @@ class Hand : Deck {
         return colorCounts
     }
     
-    func bestColor() -> Color? {
+    func bestColor() -> CardColor? {
         
         guard let (maxColor, maxCount) = self.countColors().max(by: { item1, item2 in
             return item1.value < item2.value
